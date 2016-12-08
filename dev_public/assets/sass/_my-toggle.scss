@@ -1,0 +1,33 @@
+my-toggle {
+  padding: 10px;
+  background-color: white;
+  display: inline-flex;
+  position: relative;
+  border: 1px solid lightgray;
+}
+
+toggle-value {
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.toggle-hidder{
+  width: 50%;
+  height: 100%;
+  background-color: $primary-color;
+}
+
+.toggle-hidder {
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 0px;
+  background-color: $primary-color;
+  left: 0px;
+}
+
+.toggle-hidder:hover{
+  background-color: lighten($primary-color,10%);
+}

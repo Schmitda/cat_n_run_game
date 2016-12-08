@@ -1,0 +1,7 @@
+<div class="elements">
+   <!-- <map-element [style.z-index]="item.mapElement.zCoord" *ngFor="let item of mapCreator.mapElements" [element]="item.mapElement" [xCoord]="item.xCoord" [yCoord]="item.yCoord"></map-element>-->
+    <decoration *ngFor="let decoration of mapCreator.decorations" [element]="decoration.decoration" [xCoord]="decoration.xCoord" [yCoord]="decoration.yCoord"></decoration>
+<!--    <character *ngFor="let item of mapCreator.characters" [element]="item.character" [xCoord]="item.xCoord" [yCoord]="item.yCoord"></character>
+    <collectible *ngFor="let item of mapCreator.collectibles" [element]="item.collectible" [xCoord]="item.xCoord" [yCoord]="item.yCoord"></collectible>-->
+</div>
+<map-load-modal></map-load-modal>

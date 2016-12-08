@@ -1,0 +1,54 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "body-parser/body-parser.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "express/express.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "mime/mime.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "express-serve-static-core/express-serve-static-core.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "node/node.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "rx/rx.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "q/Q.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "rx/rx-lite.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "bcryptjs/bcryptjs.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "cookie-parser/cookie-parser.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "method-override/method-override.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "mongodb/mongodb.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    },
+    "express-session/express-session.d.ts": {
+      "commit": "25c6f49e9c2fbded2b973d1875eed844f9e61fb1"
+    }
+  }
+}

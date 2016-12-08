@@ -1,0 +1,28 @@
+$margin-padding: (
+  (small, 10px),
+  (medium, 20px),
+  (large, 25px),
+  (xlarge, 30px),
+  (zero, 0px)
+);
+
+$kind:(
+  (margin, padding)
+);
+
+
+@each $sizeName, $size in $margin-padding{
+  @each $name in $kind{
+    .#{$name}-tb-#{$sizeName}  {#{$name}:$size 0};
+    .#{$name}-lr-#{$sizeName}  {#{$name}:0 $size};
+    .#{$name}-#{$sizeName}  {#{$name}:$size};
+    .#{$name}-left-#{$sizeName} {#{$name}-left:$size};
+    .#{$name}-top-#{$sizeName}  {#{$name}-top:$size};
+    .#{$name}-bottom-#{$sizeName}  {#{$name}-bottom:$size};
+    .#{$name}-right-#{$sizeName}  {#{$name}-right:$size};
+  }
+}
+
+
+
+

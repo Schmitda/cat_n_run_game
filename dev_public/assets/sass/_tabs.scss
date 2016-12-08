@@ -1,0 +1,30 @@
+tabs ul {
+  display: flex;
+  justify-content: center;
+}
+
+tabs ul li {
+  width: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+  align-self: center;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 10px;
+  border-right: 1px solid lightgray;
+}
+
+tabs ul li:hover{
+  background-color: darken(white,5%);
+  transition-duration: $transition-duration;
+}
+
+tabs ul li:last-child {
+  border-right: none;
+}
+
+tabs li.active {
+  border-bottom: 3px solid #e24d4d;
+  /* box-sizing: border-box; */
+}

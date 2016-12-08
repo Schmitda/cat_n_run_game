@@ -1,0 +1,95 @@
+input[type="text"] {
+  position: relative;
+}
+
+.my-date-calendar.icon-small {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  padding: 0 10px;
+  background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+
+my-date-input {
+  position: relative;
+  display: inline-block;
+}
+
+my-date-calendar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  width: 300px;
+}
+
+.my-date-calendar-header {
+  padding: 20px;
+  background-color: #e24d4d;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.row-calendar {
+  display: flex;
+}
+
+.row-calendar span{
+  text-align: center;
+  padding: 5px 0;
+  width: 14.28%;
+}
+
+.row-calendar span:hover{
+  background-color: #e1e1e1;
+  transition-duration: $transition-duration;
+  cursor: pointer;
+}
+
+.row-calendar-day-name.row-calendar span {
+  background-color: #e1e1e1;
+}
+
+my-date-calendar input{
+  width: 50%;
+  outline: none;
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  box-sizing: border-box;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  border-bottom: 2px solid #b7b7b7;
+  float: left;
+  text-align: right;
+}
+
+.calendar-nav:hover{
+  transition-duration: $transition-duration;
+  background-color: darken(white,5%);
+}
+
+my-date-calendar input:focus{
+  border:none;
+  box-shadow: none;
+  transition-duration: $transition-duration;
+  border-bottom: 2px solid $primary-color;
+}
+
+
+my-date-calendar input:last-child{
+  text-align: left;
+}

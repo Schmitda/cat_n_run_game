@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/libs/gridle/css/grid-flex.css">
+    <link rel="stylesheet" href="/assets/css/loading.css">
+    <link rel="stylesheet" href="/assets/libs/font-awesome/css/font-awesome.css">
+
+    <script src="/nm/core-js/client/shim.min.js"></script>
+    <script src="/nm/zone.js/dist/zone.js"></script>
+    <script src="/nm/reflect-metadata/Reflect.js"></script>
+    <script src="/nm/systemjs/dist/system.src.js"></script>
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="/assets/config/systemjs.config.js"></script>
+    <script src="/assets/libs/semantic/dist/semantic.min.js"></script>
+    <script>
+        System.import('app').catch(function(err){ console.error(err); });
+    </script>
+</head>
+<body>
+<div class="full-container">
+    <my-app>
+        <div class="middle-of-page">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+    </my-app>
+</div>
+
+</body>
+</html>

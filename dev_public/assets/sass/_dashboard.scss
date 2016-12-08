@@ -1,0 +1,25 @@
+.program-wrapper {
+  display: flex;
+}
+
+.program-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.program-item {
+  width: 100%;
+}
+
+.program-titel {
+  text-align: center;
+}
+
+.feature-item {
+  font-size: 16px;
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+}
+
+.feature-item:last-child{
+  border-bottom:none;
+}

@@ -1,0 +1,144 @@
+$font-sizes: (
+                (tiny, 10px),
+                (small, 12px),
+                (medium, 14px),
+                (large, 18px),
+                (xlarge, 24px)
+);
+
+$kind:(
+                (margin, padding)
+);
+
+
+@each $sizeName, $size in $font-sizes{
+  .font-#{$sizeName} {font-size:$size};
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-1{
+  flex: 1;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.white-color{
+  color: white!important;
+}
+
+.white-color a{
+  color: white;
+}
+
+.white-color a:hover{
+  color: white;
+}
+
+.white.hover:hover{
+  transition-duration: $transition-duration;
+  background-color: darken(white,5%);
+}
+
+.primary.hover:hover{
+  transition-duration: $transition-duration;
+  background-color: lighten($primary-color,10%);
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.primary{
+  background-color: $primary-color!important;
+  color:white!important;
+}
+
+.success-color{
+  color:$success-color;
+}
+
+.primary-color{
+  color: $primary-color;
+}
+
+.just-center{
+  justify-content: center;
+}
+.bold{
+  font-weight: bold;
+}
+
+.form-group label{
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.flex-center{
+  display: flex;
+  align-items: center;
+}
+
+.form-group{
+  margin-bottom: 10px;
+}
+
+.svg-white path, .svg-white polygon{
+  fill: white;
+}
+
+@for $i from 1 through 20{
+  $helperVar: 0;
+  @if $i < 10{
+    $helperVar: 0;
+  }@else{
+    $helperVar: 1;
+  }
+  .zoom-#{$helperVar}-#{$i}{
+    zoom: #{$helperVar + "."}#{$i};
+    -moz-transform: scale(#{$helperVar + "."}#{$i});
+  }
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}

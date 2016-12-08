@@ -1,0 +1,41 @@
+my-number-input {
+  position: relative;
+  display: block;
+}
+
+.action {
+  position: absolute;
+  top: 0px;
+  /* left: 0px; */
+  height: 100%;
+  width: 50px;
+  background-color: #e1e1e1;
+  cursor: pointer;
+}
+
+.action:hover{
+  background-color: darken(#e1e1e1,20%);
+  transition-duration: $transition-duration;
+}
+
+.minus.action {
+  left: 0px;
+  z-index: 2;
+}
+
+.plus.action {
+  right: 0px;
+}
+
+my-number-input.primary .action{
+  background-color: $primary-color;
+  color: white;
+}
+
+my-number-input.primary .action:hover{
+  background-color: lighten($primary-color,10%);
+}
+
+my-number-input input[type="text"] {
+  text-align: center;
+}

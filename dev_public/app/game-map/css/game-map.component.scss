@@ -1,0 +1,22 @@
+:host{
+  flex: 1 0;
+  min-width: 5000px;
+  height: 100%;
+  background: url(http://localhost:55/assets/img/forest/deep_forest/DeepForest_02.png);
+  background-size: contain;
+  background-repeat: repeat-x;
+  overflow-x: visible;
+  position: absolute;
+  right: 0px;
+  z-index: 98;
+  left: 0px;
+}
+
+:host(::-webkit-scrollbar) {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+:host(::-webkit-scrollbar-thumb) {
+  background: #FF0000;
+}

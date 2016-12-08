@@ -1,0 +1,44 @@
+$sizes:(
+  (tiny, 10px),
+  (small, 20px),
+  (medium, 30px),
+          (large, 40px),
+          (xlarge, 50px),
+          (navigation, 80px)
+);
+
+
+.icon-white svg path, .icon-white svg rect, .icon-white svg polygon{
+  fill:white;
+}
+
+.icon-black svg path{
+  fill:black;
+}
+
+.icon-primary svg path, .icon-primary svg rect {
+  fill: $primary-color;
+}
+
+.icon-button svg {
+  padding: 3px 10px;
+  border: 1px solid;
+  background-color: #fff;
+  border-color: #ccc;
+  cursor: pointer;
+}
+
+.icon-button:hover svg {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+@each $sizeName, $size in $sizes{
+  .icon-#{$sizeName} svg{
+   height: $size;
+   width: $size;
+  }
+}
+
+

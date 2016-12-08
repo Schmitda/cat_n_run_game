@@ -1,0 +1,13 @@
+{
+  "name": "starter-node-angular",
+  "version": "1.0.0",
+  "dependencies": {
+    "font-awesome": "latest",
+    "animate.css": "latest",
+    "gridle": "latest",
+    "es6-shim": "latest",
+    "normalize-css": "normalize.css#~3.0.3",
+    "systemjs": "*",
+    "semantic": "semantic-ui#~2.2.2"
+  }
+}
