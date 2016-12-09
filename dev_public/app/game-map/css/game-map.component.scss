@@ -31,6 +31,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: 26px;
   color: white;
+}
+
+.lives {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 10px;
+  text-align: center;
+  height: 50px;
+
+  svg{
+    height: 45px;
+    padding: 0px 5px;
+    width: 45px;
+  }
+
 }

@@ -10,12 +10,13 @@ import {MapLoadModalComponent} from "./components/map-load-modal.component";
 import {CharacterComponent} from "./components/character.component";
 import {MapElementComponent} from "./components/map-element.component";
 import {CollectibleComponent} from "./components/collectible.component";
+import {CharacterService} from "./services/character.service";
 
 
 
 @NgModule({
     imports: [ gameMapRouting, SharedModule ],
-    providers: [],
+    providers: [CharacterService],
     declarations: [  GameMapComponent, DecorationComponent, MapLoadModalComponent, CharacterComponent, MapElementComponent, CollectibleComponent ],
     exports: []
 })

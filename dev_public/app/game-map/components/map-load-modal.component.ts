@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Modal} from "../../shared/components/Modal";
 import {MapService} from "../../shared/services/map.service";
 import {MapCreator} from "../../shared/services/map-creator.service";
+import {BehaviorSubject} from "rxjs/BehaviorSubject";
 
 @Component({
     moduleId: module.id,

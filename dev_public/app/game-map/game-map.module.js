@@ -17,6 +17,7 @@ var map_load_modal_component_1 = require("./components/map-load-modal.component"
 var character_component_1 = require("./components/character.component");
 var map_element_component_1 = require("./components/map-element.component");
 var collectible_component_1 = require("./components/collectible.component");
+var character_service_1 = require("./services/character.service");
 var GameMapModule = (function () {
     function GameMapModule() {
     }
@@ -25,7 +26,7 @@ var GameMapModule = (function () {
 GameMapModule = __decorate([
     core_1.NgModule({
         imports: [game_map_routing_1.gameMapRouting, shared_module_1.SharedModule],
-        providers: [],
+        providers: [character_service_1.CharacterService],
         declarations: [game_map_component_1.GameMapComponent, decoration_component_1.DecorationComponent, map_load_modal_component_1.MapLoadModalComponent, character_component_1.CharacterComponent, map_element_component_1.MapElementComponent, collectible_component_1.CollectibleComponent],
         exports: []
     }),

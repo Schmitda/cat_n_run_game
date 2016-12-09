@@ -37,4 +37,6 @@ export abstract class BaseElement implements OnInit {
     set hidden(value: boolean) {
         this._hidden = value;
     }
+
+
 }

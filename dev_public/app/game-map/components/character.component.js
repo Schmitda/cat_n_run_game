@@ -20,19 +20,62 @@ var core_1 = require("@angular/core");
 var element_1 = require("./element");
 var game_map_component_1 = require("./game-map.component");
 var map_service_1 = require("../../shared/services/map.service");
+var character_service_1 = require("../services/character.service");
 var CharacterComponent = (function (_super) {
     __extends(CharacterComponent, _super);
-    function CharacterComponent(mapService, gameMap) {
+    function CharacterComponent(mapService, gameMap, characterService) {
         var _this = _super.call(this) || this;
         _this.mapService = mapService;
         _this.gameMap = gameMap;
+        _this.characterService = characterService;
+        _this._rotate = false;
+        _this.characterService.setCharacterComponent(_this);
         return _this;
     }
+    CharacterComponent.prototype.ngOnChanges = function (changes) {
+        if (changes.element.currentValue !== undefined) {
+            this._image = this.element.walkAnimation;
+            this.imageNumber = 0;
+        }
+    };
     CharacterComponent.prototype.setSelectedType = function () {
         this.mapService.selectedType = "character";
     };
+    CharacterComponent.prototype.getImage = function () {
+        return this._image[this.imageNumber];
+    };
     CharacterComponent.prototype.ngOnInit = function () {
     };
+    Object.defineProperty(CharacterComponent.prototype, "imageNumber", {
+        get: function () {
+            return this._imageNumber;
+        },
+        set: function (value) {
+            this._imageNumber = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CharacterComponent.prototype, "rotate", {
+        get: function () {
+            return this._rotate;
+        },
+        set: function (value) {
+            this._rotate = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CharacterComponent.prototype, "image", {
+        get: function () {
+            return this._image;
+        },
+        set: function (value) {
+            this._image = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return CharacterComponent;
 }(element_1.BaseElement));
 CharacterComponent = __decorate([
@@ -43,7 +86,7 @@ CharacterComponent = __decorate([
         styleUrls: ['../css/character.component.min.css'],
     }),
     __param(1, core_1.Inject(core_1.forwardRef(function () { return game_map_component_1.GameMapComponent; }))),
-    __metadata("design:paramtypes", [map_service_1.MapService, game_map_component_1.GameMapComponent])
+    __metadata("design:paramtypes", [map_service_1.MapService, game_map_component_1.GameMapComponent, character_service_1.CharacterService])
 ], CharacterComponent);
 exports.CharacterComponent = CharacterComponent;
 //# sourceMappingURL=character.component.js.map

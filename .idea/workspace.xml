@@ -2,26 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d63bab3-ca83-4753-b7fd-f4fc931fa015" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/character.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/collectible.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/map-element.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev_public/app/game-map/services/character.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev_public/app/game-map/templates/character.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev_public/app/game-map/templates/collectible.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev_public/app/game-map/templates/map-element.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev_public/assets/svg/1481290456_heart.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/components/character.component.js" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/character.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/components/character.component.js.map" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/character.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/components/character.component.ts" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/character.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/components/element.js.map" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/element.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/components/element.ts" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/element.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/components/game-map.component.js" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/game-map.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/components/game-map.component.js.map" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/game-map.component.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/components/game-map.component.ts" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/game-map.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/components/map-load-modal.component.js.map" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/map-load-modal.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/components/map-load-modal.component.ts" afterPath="$PROJECT_DIR$/dev_public/app/game-map/components/map-load-modal.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/css/game-map.component.min.css" afterPath="$PROJECT_DIR$/dev_public/app/game-map/css/game-map.component.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/css/game-map.component.scss" afterPath="$PROJECT_DIR$/dev_public/app/game-map/css/game-map.component.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/game-map.module.js" afterPath="$PROJECT_DIR$/dev_public/app/game-map/game-map.module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/game-map.module.js.map" afterPath="$PROJECT_DIR$/dev_public/app/game-map/game-map.module.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/game-map.module.ts" afterPath="$PROJECT_DIR$/dev_public/app/game-map/game-map.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/services/character.service.js" afterPath="$PROJECT_DIR$/dev_public/app/game-map/services/character.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/services/character.service.js.map" afterPath="$PROJECT_DIR$/dev_public/app/game-map/services/character.service.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/services/character.service.ts" afterPath="$PROJECT_DIR$/dev_public/app/game-map/services/character.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/templates/character.component.html" afterPath="$PROJECT_DIR$/dev_public/app/game-map/templates/character.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/game-map/templates/game-map.component.html" afterPath="$PROJECT_DIR$/dev_public/app/game-map/templates/game-map.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/app/index.html" afterPath="$PROJECT_DIR$/dev_public/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/assets/css/style.css" afterPath="$PROJECT_DIR$/dev_public/assets/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev_public/assets/sass/style.scss" afterPath="$PROJECT_DIR$/dev_public/assets/sass/style.scss" />
     </list>
     <ignored path="wochenplan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,40 +47,8 @@
       <file leaf-file-name="game-map.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/game-map.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#126#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="character.service.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/services/character.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev_public/assets/sass/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="883">
-              <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game-map.component.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/css/game-map.component.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="1" lean-forward="false" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+            <state relative-caret-position="102">
+              <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -87,30 +57,20 @@
       <file leaf-file-name="character.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/character.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="130" lean-forward="false" selection-start-line="13" selection-start-column="130" selection-end-line="13" selection-end-column="130" />
+            <state relative-caret-position="380">
+              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
               <folding>
-                <element signature="e#0#68#0" expanded="true" />
+                <element signature="e#0#130#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game-map.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/game-map.module.ts">
+      <file leaf-file-name="collectible.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/collectible.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="18" column="144" lean-forward="false" selection-start-line="18" selection-start-column="144" selection-end-line="18" selection-end-column="144" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev_public/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            <state relative-caret-position="0">
+              <caret line="0" column="207" lean-forward="false" selection-start-line="0" selection-start-column="207" selection-end-line="0" selection-end-column="207" />
               <folding />
             </state>
           </provider>
@@ -120,18 +80,22 @@
         <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/character.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="179" lean-forward="false" selection-start-line="0" selection-start-column="179" selection-end-line="0" selection-end-column="179" />
-              <folding />
+              <caret line="0" column="265" lean-forward="false" selection-start-line="0" selection-start-column="265" selection-end-line="0" selection-end-column="265" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game-map.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/game-map.component.html">
+      <file leaf-file-name="map-element.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/map-element.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="33" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="78" lean-forward="false" selection-start-line="0" selection-start-column="78" selection-end-line="0" selection-end-column="78" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,11 +103,55 @@
       <file leaf-file-name="map-element.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/map-element.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="130" lean-forward="false" selection-start-line="14" selection-start-column="130" selection-end-line="14" selection-end-column="130" />
+            <state relative-caret-position="493">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="character.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/services/character.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="57" column="69" lean-forward="false" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="decoration.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/decoration.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="134" lean-forward="false" selection-start-line="13" selection-start-column="134" selection-end-line="13" selection-end-column="134" />
+              <folding>
+                <element signature="e#0#92#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game-map.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/game-map.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="element.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/element.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,6 +171,10 @@
       <find>Map</find>
       <find>import {module} from &quot;@angular/upgrade/src/angular_js&quot;;</find>
       <find>Decor</find>
+      <find>characterService</find>
+      <find>startMovingTime</find>
+      <find>_mapLoaded</find>
+      <find>element</find>
     </findStrings>
     <replaceStrings>
       <replace>any</replace>
@@ -200,32 +212,32 @@
         <option value="$PROJECT_DIR$/dev_public/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/typings.json" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/components/decoration.component.ts" />
-        <option value="$PROJECT_DIR$/dev_public/app/game-map/components/element.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/game-map.routing.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/shared/shared.module.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/app.module.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/core/core.modules.ts" />
-        <option value="$PROJECT_DIR$/dev_public/app/shared/services/map.service.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/app.component.ts" />
         <option value="$PROJECT_DIR$/dev_back/WebApi.ts" />
-        <option value="$PROJECT_DIR$/dev_public/app/game-map/components/map-load-modal.component.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/templates/decoration.component.html" />
-        <option value="$PROJECT_DIR$/dev_public/app/shared/services/map-creator.service.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/css/game-map.component.min.scss" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/css/map-load-modal.component.min.scss" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/css/map-load-modal.component.scss" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/templates/collectible.component.html" />
-        <option value="$PROJECT_DIR$/dev_public/app/game-map/templates/map-element.component.html" />
-        <option value="$PROJECT_DIR$/dev_public/app/game-map/components/map-element.component.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/components/collectible.component.ts" />
-        <option value="$PROJECT_DIR$/dev_public/app/game-map/components/character.component.ts" />
-        <option value="$PROJECT_DIR$/dev_public/app/game-map/game-map.module.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/index.html" />
-        <option value="$PROJECT_DIR$/dev_public/app/game-map/templates/character.component.html" />
         <option value="$PROJECT_DIR$/dev_public/assets/sass/style.scss" />
+        <option value="$PROJECT_DIR$/dev_public/app/game-map/game-map.module.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/css/game-map.component.scss" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/templates/game-map.component.html" />
+        <option value="$PROJECT_DIR$/dev_public/app/shared/services/map.service.ts" />
+        <option value="$PROJECT_DIR$/dev_public/app/game-map/components/map-load-modal.component.ts" />
+        <option value="$PROJECT_DIR$/dev_public/app/shared/services/map-creator.service.ts" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/components/game-map.component.ts" />
+        <option value="$PROJECT_DIR$/dev_public/app/game-map/components/map-element.component.ts" />
+        <option value="$PROJECT_DIR$/dev_public/app/game-map/components/element.ts" />
+        <option value="$PROJECT_DIR$/dev_public/app/game-map/templates/map-element.component.html" />
+        <option value="$PROJECT_DIR$/dev_public/app/game-map/components/character.component.ts" />
+        <option value="$PROJECT_DIR$/dev_public/app/game-map/templates/character.component.html" />
         <option value="$PROJECT_DIR$/dev_public/app/game-map/services/character.service.ts" />
       </list>
     </option>
@@ -270,6 +282,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cat_n_run" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cat_n_run" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cat_n_run" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev_public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svg" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -621,11 +655,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Danis\PhpstormProjects\cat_n_run\dev_public\assets\svg" />
       <recent name="C:\Users\Danis\PhpstormProjects\cat_n_run\dev_public\app\game-map\templates" />
       <recent name="C:\Users\Danis\PhpstormProjects\cat_n_run\dev_public\app\game-map\components" />
       <recent name="C:\Users\Danis\PhpstormProjects\cat_n_run\dev_public\assets\css" />
       <recent name="C:\Users\Danis\PhpstormProjects\cat_n_run\dev_public\assets\sass" />
-      <recent name="C:\Users\Danis\PhpstormProjects\cat_n_run\dev_public\app\game-map" />
     </key>
   </component>
   <component name="RunManager">
@@ -705,12 +739,12 @@
       <workItem from="1481217852901" duration="414000" />
       <workItem from="1481218277068" duration="1713000" />
       <workItem from="1481219996176" duration="3578000" />
-      <workItem from="1481266166472" duration="2604000" />
+      <workItem from="1481266166472" duration="10358000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14457000" />
+    <option name="totallyTimeSpent" value="22211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -721,6 +755,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -731,7 +766,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -817,7 +851,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev_back/middleware/request-logger.js" />
     <entry file="file://$PROJECT_DIR$/nodemon.json" />
     <entry file="file://$PROJECT_DIR$/package.json" />
     <entry file="file://$PROJECT_DIR$/readme.md" />
@@ -892,6 +925,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -906,16 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/element.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#82#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -964,14 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/shared/services/map.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -995,26 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/map-load-modal.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/shared/services/map-creator.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3094">
-          <caret line="188" column="18" lean-forward="false" selection-start-line="188" selection-start-column="8" selection-end-line="188" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/css/game-map.component.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1031,49 +1027,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/collectible.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="207" lean-forward="false" selection-start-line="0" selection-start-column="207" selection-end-line="0" selection-end-column="207" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/map-element.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="207" lean-forward="false" selection-start-line="0" selection-start-column="207" selection-end-line="0" selection-end-column="207" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/map-load-modal.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="52" lean-forward="false" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/decoration.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="156" lean-forward="false" selection-start-line="0" selection-start-column="156" selection-end-line="0" selection-end-column="156" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/decoration.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="134" lean-forward="false" selection-start-line="13" selection-start-column="134" selection-end-line="13" selection-end-column="134" />
-          <folding>
-            <element signature="e#0#92#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1087,47 +1045,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/character.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="130" lean-forward="false" selection-start-line="13" selection-start-column="130" selection-end-line="13" selection-end-column="130" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/game-map.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="18" column="144" lean-forward="false" selection-start-line="18" selection-start-column="144" selection-end-line="18" selection-end-column="144" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev_public/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/character.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="179" lean-forward="false" selection-start-line="0" selection-start-column="179" selection-end-line="0" selection-end-column="179" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/map-element.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="130" lean-forward="false" selection-start-line="14" selection-start-column="130" selection-end-line="14" selection-end-column="130" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1139,37 +1061,153 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/map-load-modal.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="52" lean-forward="false" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/assets/svg/1481290456_heart.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="55" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="605" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/game-map.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/css/game-map.component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="1" lean-forward="false" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        <state relative-caret-position="561">
+          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/shared/services/map.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/shared/services/map-creator.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="123" column="23" lean-forward="false" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/map-load-modal.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/decoration.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="134" lean-forward="false" selection-start-line="13" selection-start-column="134" selection-end-line="13" selection-end-column="134" />
+          <folding>
+            <element signature="e#0#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/element.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/map-element.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="78" lean-forward="false" selection-start-line="0" selection-start-column="78" selection-end-line="0" selection-end-column="78" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/map-element.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/game-map.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/game-map.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="33" />
+        <state relative-caret-position="17">
+          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/game-map.component.ts">
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/collectible.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="207" lean-forward="false" selection-start-line="0" selection-start-column="207" selection-end-line="0" selection-end-column="207" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/templates/character.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="265" lean-forward="false" selection-start-line="0" selection-start-column="265" selection-end-line="0" selection-end-column="265" />
           <folding>
-            <element signature="e#0#126#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/components/character.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#130#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev_public/app/game-map/services/character.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="540">
+          <caret line="57" column="69" lean-forward="false" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

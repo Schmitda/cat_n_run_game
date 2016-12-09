@@ -16,17 +16,26 @@ var map_load_modal_component_1 = require("./map-load-modal.component");
 var collectible_component_1 = require("./collectible.component");
 var map_element_component_1 = require("./map-element.component");
 var character_component_1 = require("./character.component");
+var character_service_1 = require("../services/character.service");
 var GameMapComponent = (function () {
-    function GameMapComponent(mapService, mapCreator) {
+    function GameMapComponent(mapService, mapCreator, characterService) {
         var _this = this;
         this.mapService = mapService;
         this.mapCreator = mapCreator;
+        this.characterService = characterService;
         this.backgroundImage = '';
         this.pause = false;
+        this.isRunning = false;
         this.loadAnotherMap = false;
+        this.fps = 0;
         this.mapCreator.mapLoaded.subscribe(function (value) {
             if (value) {
                 _this.setBackground();
+            }
+        });
+        this.mapCreator.mapLoaded.subscribe(function (value) {
+            if (value) {
+                _this.gameLoop();
             }
         });
     }
@@ -35,6 +44,12 @@ var GameMapComponent = (function () {
         switch (event.keyCode) {
             case 27: {
                 this.pause = !this.pause;
+                if (this.pause == false) {
+                    this.gameLoop();
+                }
+                else {
+                    this.stopGame();
+                }
                 break;
             }
             case 13: {
@@ -51,12 +66,57 @@ var GameMapComponent = (function () {
                 break;
             }
         }
+        if (this.pause == false) {
+            switch (event.keyCode) {
+                case 39: {
+                    this.characterService.startMovingRight();
+                    event.stopPropagation();
+                    event.preventDefault();
+                    break;
+                }
+                case 37: {
+                    this.characterService.startMovingLeft();
+                    event.stopPropagation();
+                    event.preventDefault();
+                    break;
+                }
+            }
+        }
+    };
+    GameMapComponent.prototype.onKeyUp = function (event) {
+        this.characterService.keyReleased();
+    };
+    GameMapComponent.prototype.calculateFPS = function () {
+        if (this.lastFPSCheckDate === undefined) {
+            this.lastFPSCheckDate = new Date();
+        }
+        this.fps = Math.ceil(1000 / (this.loopBeginning.getTime() - this.lastFPSCheckDate.getTime()));
+        this.lastFPSCheckDate = this.loopBeginning;
+    };
+    GameMapComponent.prototype.stopGame = function () {
+        clearInterval(this.gameLoopInterval);
+        this.isRunning = false;
     };
     GameMapComponent.prototype.gameLoop = function () {
+        var _this = this;
+        if (this.isRunning == false) {
+            this.isRunning = true;
+            this.gameLoopInterval = setInterval(function () {
+                _this.gameLoop();
+            }, 16.6666);
+        }
+        else {
+            this.loopBeginning = new Date();
+            this.calculateFPS();
+            this.processCharacter();
+        }
+    };
+    GameMapComponent.prototype.processCharacter = function () {
+        this.characterService.accelerate();
+        this.characterService.moveCharacter();
     };
     GameMapComponent.prototype.ngAfterViewInit = function () {
         this.mapLoadModal.show();
-        this.gameLoop();
     };
     GameMapComponent.prototype.ngOnInit = function () {
     };
@@ -96,6 +156,12 @@ __decorate([
     __metadata("design:paramtypes", [KeyboardEvent]),
     __metadata("design:returntype", void 0)
 ], GameMapComponent.prototype, "onKeyDown", null);
+__decorate([
+    core_1.HostListener('window:keyup', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [KeyboardEvent]),
+    __metadata("design:returntype", void 0)
+], GameMapComponent.prototype, "onKeyUp", null);
 GameMapComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
@@ -103,7 +169,7 @@ GameMapComponent = __decorate([
         templateUrl: '../templates/game-map.component.html',
         styleUrls: ['../css/game-map.component.min.css'],
     }),
-    __metadata("design:paramtypes", [map_service_1.MapService, map_creator_service_1.MapCreator])
+    __metadata("design:paramtypes", [map_service_1.MapService, map_creator_service_1.MapCreator, character_service_1.CharacterService])
 ], GameMapComponent);
 exports.GameMapComponent = GameMapComponent;
 //# sourceMappingURL=game-map.component.js.map
