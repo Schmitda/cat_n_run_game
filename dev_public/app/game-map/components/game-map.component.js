@@ -13,20 +13,50 @@ var decoration_component_1 = require("./decoration.component");
 var map_service_1 = require("../../shared/services/map.service");
 var map_creator_service_1 = require("../../shared/services/map-creator.service");
 var map_load_modal_component_1 = require("./map-load-modal.component");
+var collectible_component_1 = require("./collectible.component");
+var map_element_component_1 = require("./map-element.component");
+var character_component_1 = require("./character.component");
 var GameMapComponent = (function () {
     function GameMapComponent(mapService, mapCreator) {
         var _this = this;
         this.mapService = mapService;
         this.mapCreator = mapCreator;
         this.backgroundImage = '';
+        this.pause = false;
+        this.loadAnotherMap = false;
         this.mapCreator.mapLoaded.subscribe(function (value) {
             if (value) {
                 _this.setBackground();
             }
         });
     }
+    GameMapComponent.prototype.onKeyDown = function (event) {
+        console.log(event);
+        switch (event.keyCode) {
+            case 27: {
+                this.pause = !this.pause;
+                break;
+            }
+            case 13: {
+                if (this.loadAnotherMap == false) {
+                    this.pause = true;
+                    this.loadAnotherMap = true;
+                    this.mapLoadModal.show();
+                }
+                else {
+                    this.loadAnotherMap = false;
+                    this.mapLoadModal.hide();
+                    this.pause = false;
+                }
+                break;
+            }
+        }
+    };
+    GameMapComponent.prototype.gameLoop = function () {
+    };
     GameMapComponent.prototype.ngAfterViewInit = function () {
         this.mapLoadModal.show();
+        this.gameLoop();
     };
     GameMapComponent.prototype.ngOnInit = function () {
     };
@@ -41,6 +71,18 @@ __decorate([
     __metadata("design:type", core_1.QueryList)
 ], GameMapComponent.prototype, "decorationComponents", void 0);
 __decorate([
+    core_1.ViewChildren(collectible_component_1.CollectibleComponent),
+    __metadata("design:type", core_1.QueryList)
+], GameMapComponent.prototype, "collectibleComponents", void 0);
+__decorate([
+    core_1.ViewChildren(map_element_component_1.MapElementComponent),
+    __metadata("design:type", core_1.QueryList)
+], GameMapComponent.prototype, "mapElementComponents", void 0);
+__decorate([
+    core_1.ViewChildren(character_component_1.CharacterComponent),
+    __metadata("design:type", core_1.QueryList)
+], GameMapComponent.prototype, "characterComponents", void 0);
+__decorate([
     core_1.ViewChild(map_load_modal_component_1.MapLoadModalComponent),
     __metadata("design:type", map_load_modal_component_1.MapLoadModalComponent)
 ], GameMapComponent.prototype, "mapLoadModal", void 0);
@@ -48,6 +90,12 @@ __decorate([
     core_1.HostBinding('style.background-image'),
     __metadata("design:type", String)
 ], GameMapComponent.prototype, "backgroundImage", void 0);
+__decorate([
+    core_1.HostListener('window:keydown', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [KeyboardEvent]),
+    __metadata("design:returntype", void 0)
+], GameMapComponent.prototype, "onKeyDown", null);
 GameMapComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

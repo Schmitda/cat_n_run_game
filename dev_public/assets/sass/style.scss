@@ -199,3 +199,9 @@ input:focus, textarea:focus {
   max-height: 500px;
   overflow-y: scroll;
 }
+
+body {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+

@@ -14,6 +14,9 @@ var shared_module_1 = require("../shared/shared.module");
 var game_map_component_1 = require("./components/game-map.component");
 var decoration_component_1 = require("./components/decoration.component");
 var map_load_modal_component_1 = require("./components/map-load-modal.component");
+var character_component_1 = require("./components/character.component");
+var map_element_component_1 = require("./components/map-element.component");
+var collectible_component_1 = require("./components/collectible.component");
 var GameMapModule = (function () {
     function GameMapModule() {
     }
@@ -23,7 +26,7 @@ GameMapModule = __decorate([
     core_1.NgModule({
         imports: [game_map_routing_1.gameMapRouting, shared_module_1.SharedModule],
         providers: [],
-        declarations: [game_map_component_1.GameMapComponent, decoration_component_1.DecorationComponent, map_load_modal_component_1.MapLoadModalComponent],
+        declarations: [game_map_component_1.GameMapComponent, decoration_component_1.DecorationComponent, map_load_modal_component_1.MapLoadModalComponent, character_component_1.CharacterComponent, map_element_component_1.MapElementComponent, collectible_component_1.CollectibleComponent],
         exports: []
     }),
     __metadata("design:paramtypes", [])
