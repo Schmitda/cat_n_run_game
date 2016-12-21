@@ -19,18 +19,28 @@ var map_service_1 = require("../../shared/services/map.service");
 var map_creator_service_1 = require("../../shared/services/map-creator.service");
 var MapLoadModalComponent = (function (_super) {
     __extends(MapLoadModalComponent, _super);
-    function MapLoadModalComponent(mapService, mapCreator) {
+    function MapLoadModalComponent(mapService, mapCreator, ref, renderer) {
         var _this = _super.call(this) || this;
         _this.mapService = mapService;
         _this.mapCreator = mapCreator;
+        _this.ref = ref;
+        _this.renderer = renderer;
         _this.mapService.getAll().subscribe(function (results) {
             _this.maps = results;
         });
         return _this;
     }
+    MapLoadModalComponent.prototype.hide = function () {
+        this.renderer.setElementStyle(this.ref.nativeElement, 'display', 'none');
+        return _super.prototype.hide.call(this);
+    };
     MapLoadModalComponent.prototype.loadMap = function (map) {
         this.mapCreator.loadMap(map);
         this.hide();
+    };
+    MapLoadModalComponent.prototype.show = function () {
+        this.renderer.setElementStyle(this.ref.nativeElement, 'display', 'block');
+        return _super.prototype.show.call(this);
     };
     MapLoadModalComponent.prototype.ngOnInit = function () {
     };
@@ -43,7 +53,7 @@ MapLoadModalComponent = __decorate([
         templateUrl: '../templates/map-load-modal.component.html',
         styleUrls: ['../css/map-load-modal.component.min.css'],
     }),
-    __metadata("design:paramtypes", [map_service_1.MapService, map_creator_service_1.MapCreator])
+    __metadata("design:paramtypes", [map_service_1.MapService, map_creator_service_1.MapCreator, core_1.ElementRef, core_1.Renderer])
 ], MapLoadModalComponent);
 exports.MapLoadModalComponent = MapLoadModalComponent;
 //# sourceMappingURL=map-load-modal.component.js.map

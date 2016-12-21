@@ -63,6 +63,11 @@ var MapCreator = (function () {
             });
         }
     };
+    MapCreator.prototype.getMapElementAtPosition = function (x, y) {
+        this.mapElements.forEach(function (mapElement, index) {
+            var mapElement = mapElement.mapElement;
+        });
+    };
     MapCreator.prototype.addCollectible = function (element, yCoord, xCoord) {
         var _this = this;
         var doesAlreadyExist = false;

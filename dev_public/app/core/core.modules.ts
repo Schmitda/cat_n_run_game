@@ -4,12 +4,13 @@ import {
 import { CommonModule }      from '@angular/common';
 import {MapService} from "../shared/services/map.service";
 import {MapCreator} from "../shared/services/map-creator.service";
+import {MapRepresentationService} from "../shared/services/map-representation.service";
 
 @NgModule({
     imports:      [ CommonModule ],
   /*  declarations: [ TitleComponent ],
     exports:      [ TitleComponent ],*/
-    providers:    [ MapService, MapCreator]
+    providers:    [ MapService, MapCreator, MapRepresentationService]
 })
 export class CoreModule {
 }

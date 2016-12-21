@@ -17,12 +17,14 @@ var collectible_component_1 = require("./collectible.component");
 var map_element_component_1 = require("./map-element.component");
 var character_component_1 = require("./character.component");
 var character_service_1 = require("../services/character.service");
+var map_representation_service_1 = require("../../shared/services/map-representation.service");
 var GameMapComponent = (function () {
-    function GameMapComponent(mapService, mapCreator, characterService) {
+    function GameMapComponent(mapService, mapCreator, characterService, mapRepresentationService) {
         var _this = this;
         this.mapService = mapService;
         this.mapCreator = mapCreator;
         this.characterService = characterService;
+        this.mapRepresentationService = mapRepresentationService;
         this.backgroundImage = '';
         this.pause = false;
         this.isRunning = false;
@@ -33,6 +35,7 @@ var GameMapComponent = (function () {
                 _this.setBackground();
             }
         });
+        this.mapRepresentationService.gameMap = this;
         this.mapCreator.mapLoaded.subscribe(function (value) {
             if (value) {
                 _this.gameLoop();
@@ -40,7 +43,7 @@ var GameMapComponent = (function () {
         });
     }
     GameMapComponent.prototype.onKeyDown = function (event) {
-        console.log(event);
+        console.log(event.keyCode);
         switch (event.keyCode) {
             case 27: {
                 this.pause = !this.pause;
@@ -65,6 +68,12 @@ var GameMapComponent = (function () {
                 }
                 break;
             }
+            case 32: {
+                if (this.pause == false) {
+                    this.characterService.startJumping();
+                }
+                break;
+            }
         }
         if (this.pause == false) {
             switch (event.keyCode) {
@@ -84,7 +93,16 @@ var GameMapComponent = (function () {
         }
     };
     GameMapComponent.prototype.onKeyUp = function (event) {
-        this.characterService.keyReleased();
+        switch (event.keyCode) {
+            case 39: {
+                this.characterService.keyReleased();
+                break;
+            }
+            case 37: {
+                this.characterService.keyReleased();
+                break;
+            }
+        }
     };
     GameMapComponent.prototype.calculateFPS = function () {
         if (this.lastFPSCheckDate === undefined) {
@@ -109,7 +127,12 @@ var GameMapComponent = (function () {
             this.loopBeginning = new Date();
             this.calculateFPS();
             this.processCharacter();
+            this.characterService.checkIfMoved();
+            this.processGravity();
         }
+    };
+    GameMapComponent.prototype.processGravity = function () {
+        this.characterService.processGravity();
     };
     GameMapComponent.prototype.processCharacter = function () {
         this.characterService.accelerate();
@@ -169,7 +192,7 @@ GameMapComponent = __decorate([
         templateUrl: '../templates/game-map.component.html',
         styleUrls: ['../css/game-map.component.min.css'],
     }),
-    __metadata("design:paramtypes", [map_service_1.MapService, map_creator_service_1.MapCreator, character_service_1.CharacterService])
+    __metadata("design:paramtypes", [map_service_1.MapService, map_creator_service_1.MapCreator, character_service_1.CharacterService, map_representation_service_1.MapRepresentationService])
 ], GameMapComponent);
 exports.GameMapComponent = GameMapComponent;
 //# sourceMappingURL=game-map.component.js.map

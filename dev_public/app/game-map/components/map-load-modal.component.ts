@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, HostBinding, ViewContainerRef, Renderer, ElementRef} from '@angular/core';
 import {Modal} from "../../shared/components/Modal";
 import {MapService} from "../../shared/services/map.service";
 import {MapCreator} from "../../shared/services/map-creator.service";
@@ -13,16 +13,28 @@ import {BehaviorSubject} from "rxjs/BehaviorSubject";
 export class MapLoadModalComponent extends Modal implements OnInit {
     private maps: any[];
 
-    constructor(private mapService: MapService, private mapCreator: MapCreator) {
+
+    constructor(private mapService: MapService, private mapCreator: MapCreator, private ref: ElementRef, private renderer: Renderer) {
         super();
         this.mapService.getAll().subscribe((results) => {
             this.maps = results;
         })
     }
 
+    public hide(): any {
+        this.renderer.setElementStyle(this.ref.nativeElement,'display','none');
+        return super.hide();
+    }
+
     private loadMap(map:any){
         this.mapCreator.loadMap(map);
         this.hide();
+    }
+
+
+    public show(): any {
+        this.renderer.setElementStyle(this.ref.nativeElement,'display','block');
+        return super.show();
     }
 
     ngOnInit() {

@@ -23,11 +23,12 @@ var map_service_1 = require("../../shared/services/map.service");
 var character_service_1 = require("../services/character.service");
 var CharacterComponent = (function (_super) {
     __extends(CharacterComponent, _super);
-    function CharacterComponent(mapService, gameMap, characterService) {
+    function CharacterComponent(mapService, gameMap, characterService, _ref) {
         var _this = _super.call(this) || this;
         _this.mapService = mapService;
         _this.gameMap = gameMap;
         _this.characterService = characterService;
+        _this._ref = _ref;
         _this._rotate = false;
         _this.characterService.setCharacterComponent(_this);
         return _this;
@@ -66,6 +67,16 @@ var CharacterComponent = (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(CharacterComponent.prototype, "ref", {
+        get: function () {
+            return this._ref;
+        },
+        set: function (value) {
+            this._ref = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(CharacterComponent.prototype, "image", {
         get: function () {
             return this._image;
@@ -78,6 +89,10 @@ var CharacterComponent = (function (_super) {
     });
     return CharacterComponent;
 }(element_1.BaseElement));
+__decorate([
+    core_1.ViewChild('imgElement'),
+    __metadata("design:type", core_1.ElementRef)
+], CharacterComponent.prototype, "imgElement", void 0);
 CharacterComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
@@ -86,7 +101,7 @@ CharacterComponent = __decorate([
         styleUrls: ['../css/character.component.min.css'],
     }),
     __param(1, core_1.Inject(core_1.forwardRef(function () { return game_map_component_1.GameMapComponent; }))),
-    __metadata("design:paramtypes", [map_service_1.MapService, game_map_component_1.GameMapComponent, character_service_1.CharacterService])
+    __metadata("design:paramtypes", [map_service_1.MapService, game_map_component_1.GameMapComponent, character_service_1.CharacterService, core_1.ElementRef])
 ], CharacterComponent);
 exports.CharacterComponent = CharacterComponent;
 //# sourceMappingURL=character.component.js.map

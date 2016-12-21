@@ -86,6 +86,13 @@ export class MapCreator{
         }
     }
 
+    public getMapElementAtPosition(x: number, y: number) {
+        this.mapElements.forEach((mapElement,index) => {
+            let mapElement = mapElement.mapElement;
+
+        })
+    }
+
     public addCollectible(element: Character, yCoord: number, xCoord: number){
         let doesAlreadyExist = false;
         this._collectibles.forEach((item, index:number) => {
@@ -234,5 +241,4 @@ export class MapCreator{
     set mapLoaded(value: BehaviorSubject<boolean>) {
         this._mapLoaded = value;
     }
-
 }

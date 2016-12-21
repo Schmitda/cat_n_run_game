@@ -7,6 +7,7 @@ import {CollectibleComponent} from "./collectible.component";
 import {MapElementComponent} from "./map-element.component";
 import {CharacterComponent} from "./character.component";
 import {CharacterService} from "../services/character.service";
+import {MapRepresentationService} from "../../shared/services/map-representation.service";
 
 @Component({
     moduleId: module.id,
@@ -23,7 +24,7 @@ export class GameMapComponent implements OnInit, AfterViewInit {
     @HostBinding('style.background-image') backgroundImage: string = '';
     @HostListener('window:keydown', ['$event'])
     onKeyDown(event: KeyboardEvent){
-        console.log(event);
+        console.log(event.keyCode);
         switch(event.keyCode){
             case 27:{
                 this.pause = !this.pause;
@@ -43,6 +44,12 @@ export class GameMapComponent implements OnInit, AfterViewInit {
                     this.loadAnotherMap = false;
                     this.mapLoadModal.hide();
                     this.pause = false;
+                }
+                break;
+            }
+            case 32:{
+                if(this.pause == false){
+                    this.characterService.startJumping();
                 }
                 break;
             }
@@ -68,7 +75,16 @@ export class GameMapComponent implements OnInit, AfterViewInit {
 
     @HostListener('window:keyup', ['$event'])
     onKeyUp(event: KeyboardEvent){
-        this.characterService.keyReleased();
+        switch (event.keyCode) {
+            case 39: {
+                this.characterService.keyReleased();
+                break;
+            }
+            case 37: {
+                this.characterService.keyReleased();
+                break;
+            }
+        }
     }
 
     private gameLoopInterval: any;
@@ -79,12 +95,13 @@ export class GameMapComponent implements OnInit, AfterViewInit {
     private lastFPSCheckDate: Date;
     private fps: number = 0;
 
-    constructor(private mapService: MapService, private mapCreator: MapCreator,private characterService: CharacterService) {
+    constructor(private mapService: MapService, private mapCreator: MapCreator,private characterService: CharacterService, private mapRepresentationService: MapRepresentationService) {
         this.mapCreator.mapLoaded.subscribe((value) => {
             if(value){
                 this.setBackground();
             }
         });
+        this.mapRepresentationService.gameMap = this;
         this.mapCreator.mapLoaded.subscribe((value) => {
             if(value){
                 this.gameLoop();
@@ -116,8 +133,13 @@ export class GameMapComponent implements OnInit, AfterViewInit {
             this.loopBeginning = new Date();
             this.calculateFPS();
             this.processCharacter();
+            this.characterService.checkIfMoved();
+            this.processGravity();
         }
+    }
 
+    private processGravity(){
+        this.characterService.processGravity();
     }
 
     private processCharacter(){
@@ -126,6 +148,7 @@ export class GameMapComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
+
         this.mapLoadModal.show();
     }
 

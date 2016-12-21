@@ -1,4 +1,4 @@
-import {Component, OnInit, forwardRef, Inject, ViewChild, ElementRef, HostBinding, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, OnInit, forwardRef, Inject, ViewChild, ElementRef, HostBinding, OnChanges, SimpleChanges, Input} from '@angular/core';
 import {BaseElement} from "./element";
 import {GameMapComponent} from "./game-map.component";
 import {MapService} from "../../shared/services/map.service";
@@ -15,8 +15,9 @@ export class CharacterComponent extends BaseElement implements OnInit, OnChanges
     private _rotate: boolean = false;
     private _image: string;
     private _imageNumber: number;
+    @ViewChild('imgElement') imgElement: ElementRef;
 
-    constructor(protected mapService: MapService, @Inject(forwardRef(() =>  GameMapComponent)) protected gameMap: GameMapComponent, private characterService: CharacterService) {
+    constructor(protected mapService: MapService, @Inject(forwardRef(() =>  GameMapComponent)) protected gameMap: GameMapComponent, private characterService: CharacterService, private _ref: ElementRef) {
         super();
         this.characterService.setCharacterComponent(this);
     }
@@ -54,6 +55,14 @@ export class CharacterComponent extends BaseElement implements OnInit, OnChanges
 
     set rotate(value: boolean) {
         this._rotate = value;
+    }
+
+    get ref(): ElementRef {
+        return this._ref;
+    }
+
+    set ref(value: ElementRef) {
+        this._ref = value;
     }
 
 
