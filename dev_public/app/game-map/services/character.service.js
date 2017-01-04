@@ -23,6 +23,7 @@ var CharacterService = (function () {
         this.accelerationTime = 3000;
         this.isJumping = false;
         this.isFalling = false;
+        this.mapRepresentationService.characterService = this;
     }
     CharacterService.prototype.startMovingRight = function () {
         if (this.isWalking == false || this.direction !== "right") {
@@ -42,7 +43,6 @@ var CharacterService = (function () {
         var xYPosition = this.getXYPosition();
         if (this.isJumping == false) {
             if (this.mapRepresentationService.checkIfCatIsOnElement(xYPosition.x, xYPosition.y) == true) {
-                console.log(this);
                 this.isJumping = true;
                 this.gravity = 0;
                 this.jumpStart = new Date();
@@ -74,19 +74,19 @@ var CharacterService = (function () {
         if (this.lastPictureChange == undefined) {
             this.lastPictureChange = new Date();
         }
-        if (this.characterComponent) {
+        if (this._characterComponent) {
             if (this.direction == "right" && this.isWalking) {
-                this.characterComponent.xCoord = this.characterComponent.xCoord + (10 * this.speed);
-                this.characterComponent.rotate = false;
+                this._characterComponent.xCoord = this._characterComponent.xCoord + (10 * this.speed);
+                this._characterComponent.rotate = false;
                 if (this.isJumping) {
-                    this.characterComponent.yCoord = this.characterComponent.yCoord - (10 * this.speed);
+                    this._characterComponent.yCoord = this._characterComponent.yCoord - (10 * this.speed);
                 }
             }
             else if (this.direction == "left" && this.isWalking) {
-                this.characterComponent.rotate = true;
-                this.characterComponent.xCoord = this.characterComponent.xCoord - (10 * this.speed);
+                this._characterComponent.rotate = true;
+                this._characterComponent.xCoord = this._characterComponent.xCoord - (10 * this.speed);
                 if (this.isJumping) {
-                    this.characterComponent.yCoord = this.characterComponent.yCoord - (10 * this.speed);
+                    this._characterComponent.yCoord = this._characterComponent.yCoord - (10 * this.speed);
                 }
             }
         }
@@ -94,16 +94,28 @@ var CharacterService = (function () {
             var date = new Date();
             if (date.getTime() - this.lastPictureChange.getTime() > 33) {
                 this.lastPictureChange = date;
-                if (this.characterComponent.element.walkAnimation.length - 1 > this.characterComponent.imageNumber) {
-                    this.characterComponent.imageNumber++;
+                if (this._characterComponent.element.walkAnimation.length - 1 > this._characterComponent.imageNumber) {
+                    this._characterComponent.imageNumber++;
                 }
                 else {
-                    this.characterComponent.imageNumber = 0;
+                    this._characterComponent.imageNumber = 0;
                 }
             }
         }
         else {
-            this.characterComponent.imageNumber = 0;
+            this._characterComponent.imageNumber = 0;
+        }
+    };
+    CharacterService.prototype.checkPosition = function () {
+        if (this.getXYPosition().y > document.documentElement.clientHeight * (1 / this.gameMap.zoom)) {
+            this.live = 0;
+        }
+        var collectible = this.mapRepresentationService.getCollectibleCatTouches();
+        console.log(collectible);
+        if (collectible) {
+            if (collectible.element.reward == 'winningPoint') {
+                this.gameMap.playerHasWon();
+            }
         }
     };
     CharacterService.prototype.checkIfMoved = function () {
@@ -115,33 +127,30 @@ var CharacterService = (function () {
         }
     };
     CharacterService.prototype.setCharacterComponent = function (characterComponent) {
-        this.characterComponent = characterComponent;
+        this._characterComponent = characterComponent;
     };
     CharacterService.prototype.getXYPosition = function () {
-        var rectangle = this.characterComponent.imgElement.nativeElement.getBoundingClientRect();
-        var x = rectangle.left + rectangle.width / 2;
+        var rectangle = this._characterComponent.imgElement.nativeElement.getBoundingClientRect();
+        var x = Math.abs(document.body.getClientRects()[0].left * this.gameMap.reverseZoom()) + rectangle.left + rectangle.width / 2;
         var y = rectangle.bottom;
         return { x: x, y: y };
     };
     CharacterService.prototype.processGravity = function () {
-        /*if (this.hasMoved) {*/
         var date = new Date();
         var xYPosition = this.getXYPosition();
         if (this.gravity > 0) {
             //TODO check cat is on element function
-            console.log(this.mapRepresentationService.checkIfCatIsOnElement(xYPosition.x, xYPosition.y));
             if (this.mapRepresentationService.checkIfCatIsOnElement(xYPosition.x, xYPosition.y) == false) {
                 var xYPosition_1 = this.getXYPosition();
-                var element_1 = this.mapRepresentationService.isInMapElementAndGetElement(xYPosition_1.x, xYPosition_1.y + 1);
-                this.characterComponent.yCoord = this.characterComponent.yCoord + (this.gravity * 0.5);
-                if (element_1) {
-                    if (this.mapRepresentationService.isInTopBorder(xYPosition_1.y, element_1)) {
-                        this.characterComponent.yCoord = element_1.yCoord - this.characterComponent.element.height + 45;
-                    }
-                }
+                this._characterComponent.yCoord = this._characterComponent.yCoord + (this.gravity * 0.5);
             }
         }
-        /*}*/
+    };
+    CharacterService.prototype.checkLive = function () {
+        if (this.live <= 0) {
+            this._gameMap.gameOver = true;
+            this._gameMap.stopGame();
+        }
     };
     CharacterService.prototype.keyReleased = function () {
         this.isWalking = false;
@@ -157,9 +166,12 @@ var CharacterService = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(CharacterService.prototype, "gameMape", {
+    Object.defineProperty(CharacterService.prototype, "gameMap", {
+        get: function () {
+            return this._gameMap;
+        },
         set: function (value) {
-            this._gameMape = value;
+            this._gameMap = value;
         },
         enumerable: true,
         configurable: true
@@ -180,6 +192,16 @@ var CharacterService = (function () {
         },
         set: function (value) {
             this._live = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CharacterService.prototype, "characterComponent", {
+        get: function () {
+            return this._characterComponent;
+        },
+        set: function (value) {
+            this._characterComponent = value;
         },
         enumerable: true,
         configurable: true

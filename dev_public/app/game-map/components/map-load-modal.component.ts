@@ -27,7 +27,10 @@ export class MapLoadModalComponent extends Modal implements OnInit {
     }
 
     private loadMap(map:any){
-        this.mapCreator.loadMap(map);
+        this.mapCreator.clearMap();
+        setTimeout(()=>{
+            this.mapCreator.loadMap(map);
+        },0);
         this.hide();
     }
 

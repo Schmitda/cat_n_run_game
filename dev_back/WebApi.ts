@@ -32,12 +32,12 @@ export class WebApi{
         //SETTING UP COOKIES
         app.use(cookieParser());
         //SETTING UP SESSSIONS
-        app.use(expressSession({
+       /* app.use(expressSession({
             store: new FileStore(db.filestoreSessionOptions),
             secret: db.salt,
             resave: true,
             saveUninitialized: false
-        }));
+        }));*/
         // PARSE x-www-form-urlencode
         app.use(bodyParser.urlencoded({ extended: true }));
         app.use(express.static(__dirname + '/../dev_public'));

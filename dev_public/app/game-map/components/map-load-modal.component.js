@@ -35,7 +35,11 @@ var MapLoadModalComponent = (function (_super) {
         return _super.prototype.hide.call(this);
     };
     MapLoadModalComponent.prototype.loadMap = function (map) {
-        this.mapCreator.loadMap(map);
+        var _this = this;
+        this.mapCreator.clearMap();
+        setTimeout(function () {
+            _this.mapCreator.loadMap(map);
+        }, 0);
         this.hide();
     };
     MapLoadModalComponent.prototype.show = function () {

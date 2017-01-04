@@ -3,6 +3,7 @@ import {CharacterComponent} from "../components/character.component";
 import {MapCreator} from "../../shared/services/map-creator.service";
 import {GameMapComponent} from "../components/game-map.component";
 import {MapRepresentationService} from "../../shared/services/map-representation.service";
+import {CollectibleComponent} from "../components/collectible.component";
 
 @Injectable()
 export class CharacterService {
@@ -17,15 +18,15 @@ export class CharacterService {
     private jumpStart: Date;
     private jumpMaxDuration: number = 0.3;
     private accelerationTime: number = 3000;
-    private characterComponent: CharacterComponent;
+    private _characterComponent: CharacterComponent;
     private lastPictureChange: Date;
     private isJumping: boolean = false;
     private isFalling: boolean = false;
-    private _gameMape: GameMapComponent;
+    private _gameMap: GameMapComponent;
     hasMoved: boolean;
 
     constructor(private mapRepresentationService: MapRepresentationService) {
-
+        this.mapRepresentationService.characterService = this;
     }
 
     public startMovingRight() {
@@ -48,7 +49,6 @@ export class CharacterService {
         let xYPosition = this.getXYPosition();
         if (this.isJumping == false) {
             if (this.mapRepresentationService.checkIfCatIsOnElement(xYPosition.x, xYPosition.y) == true) {
-                console.log(this);
                 this.isJumping = true;
                 this.gravity = 0;
                 this.jumpStart = new Date();
@@ -84,18 +84,18 @@ export class CharacterService {
         if (this.lastPictureChange == undefined) {
             this.lastPictureChange = new Date();
         }
-        if (this.characterComponent) {
+        if (this._characterComponent) {
             if (this.direction == "right" && this.isWalking) {
-                this.characterComponent.xCoord = this.characterComponent.xCoord + (10 * this.speed);
-                this.characterComponent.rotate = false;
+                this._characterComponent.xCoord = this._characterComponent.xCoord + (10 * this.speed);
+                this._characterComponent.rotate = false;
                 if (this.isJumping) {
-                    this.characterComponent.yCoord = this.characterComponent.yCoord - (10 * this.speed);
+                    this._characterComponent.yCoord = this._characterComponent.yCoord - (10 * this.speed);
                 }
             } else if (this.direction == "left" && this.isWalking) {
-                this.characterComponent.rotate = true;
-                this.characterComponent.xCoord = this.characterComponent.xCoord - (10 * this.speed);
+                this._characterComponent.rotate = true;
+                this._characterComponent.xCoord = this._characterComponent.xCoord - (10 * this.speed);
                 if (this.isJumping) {
-                    this.characterComponent.yCoord = this.characterComponent.yCoord - (10 * this.speed);
+                    this._characterComponent.yCoord = this._characterComponent.yCoord - (10 * this.speed);
                 }
             }
         }
@@ -103,14 +103,27 @@ export class CharacterService {
             let date = new Date();
             if (date.getTime() - this.lastPictureChange.getTime() > 33) {
                 this.lastPictureChange = date;
-                if (this.characterComponent.element.walkAnimation.length - 1 > this.characterComponent.imageNumber) {
-                    this.characterComponent.imageNumber++;
+                if (this._characterComponent.element.walkAnimation.length - 1 > this._characterComponent.imageNumber) {
+                    this._characterComponent.imageNumber++;
                 } else {
-                    this.characterComponent.imageNumber = 0;
+                    this._characterComponent.imageNumber = 0;
                 }
             }
         } else {
-            this.characterComponent.imageNumber = 0;
+            this._characterComponent.imageNumber = 0;
+        }
+    }
+
+    public checkPosition() {
+        if (this.getXYPosition().y > document.documentElement.clientHeight * (1 / this.gameMap.zoom)) {
+            this.live = 0;
+        }
+        let collectible: CollectibleComponent|boolean = this.mapRepresentationService.getCollectibleCatTouches();
+        console.log(collectible);
+        if (collectible) {
+            if (collectible.element.reward == 'winningPoint') {
+                this.gameMap.playerHasWon();
+            }
         }
     }
 
@@ -123,40 +136,33 @@ export class CharacterService {
     }
 
     public setCharacterComponent(characterComponent: CharacterComponent) {
-        this.characterComponent = characterComponent;
+        this._characterComponent = characterComponent;
     }
 
-    private getXYPosition() {
-        let rectangle = this.characterComponent.imgElement.nativeElement.getBoundingClientRect();
-        let x = rectangle.left + rectangle.width / 2;
+    public getXYPosition() {
+        let rectangle = this._characterComponent.imgElement.nativeElement.getBoundingClientRect();
+        let x = Math.abs(document.body.getClientRects()[0].left * this.gameMap.reverseZoom()) + rectangle.left + rectangle.width / 2;
         let y = rectangle.bottom;
         return {x: x, y: y}
     }
 
     public processGravity() {
-        /*if (this.hasMoved) {*/
         let date = new Date();
         let xYPosition = this.getXYPosition();
         if (this.gravity > 0) {
-
             //TODO check cat is on element function
-            console.log(this.mapRepresentationService.checkIfCatIsOnElement(xYPosition.x, xYPosition.y));
             if (this.mapRepresentationService.checkIfCatIsOnElement(xYPosition.x, xYPosition.y) == false) {
-
                 let xYPosition = this.getXYPosition();
-                let element = this.mapRepresentationService.isInMapElementAndGetElement(xYPosition.x, xYPosition.y + 1);
-                this.characterComponent.yCoord = this.characterComponent.yCoord + (this.gravity * 0.5);
-                if (element) {
-                    if (this.mapRepresentationService.isInTopBorder(xYPosition.y, element)) {
-                        this.characterComponent.yCoord = element.yCoord - this.characterComponent.element.height + 45;
-                    }
-                    /*else{
-                     this.characterComponent.yCoord = this.characterComponent.yCoord + (this.gravity * 0.5);
-                     }*/
-                }
+                this._characterComponent.yCoord = this._characterComponent.yCoord + (this.gravity * 0.5);
             }
         }
-        /*}*/
+    }
+
+    public checkLive() {
+        if (this.live <= 0) {
+            this._gameMap.gameOver = true;
+            this._gameMap.stopGame();
+        }
     }
 
     public keyReleased() {
@@ -172,8 +178,13 @@ export class CharacterService {
         this._isWalking = value;
     }
 
-    set gameMape(value: GameMapComponent) {
-        this._gameMape = value;
+
+    get gameMap(): GameMapComponent {
+        return this._gameMap;
+    }
+
+    set gameMap(value: GameMapComponent) {
+        this._gameMap = value;
     }
 
     get speed(): any {
@@ -192,4 +203,12 @@ export class CharacterService {
         this._live = value;
     }
 
+
+    get characterComponent(): CharacterComponent {
+        return this._characterComponent;
+    }
+
+    set characterComponent(value: CharacterComponent) {
+        this._characterComponent = value;
+    }
 }

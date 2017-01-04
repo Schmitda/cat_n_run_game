@@ -19,23 +19,29 @@ var character_component_1 = require("./character.component");
 var character_service_1 = require("../services/character.service");
 var map_representation_service_1 = require("../../shared/services/map-representation.service");
 var GameMapComponent = (function () {
-    function GameMapComponent(mapService, mapCreator, characterService, mapRepresentationService) {
+    function GameMapComponent(mapService, mapCreator, characterService, mapRepresentationService, mapElement) {
         var _this = this;
         this.mapService = mapService;
         this.mapCreator = mapCreator;
         this.characterService = characterService;
         this.mapRepresentationService = mapRepresentationService;
+        this.mapElement = mapElement;
         this.backgroundImage = '';
+        this.zoom = 1;
         this.pause = false;
+        this._gameOver = false;
         this.isRunning = false;
+        this._hasWon = false;
         this.loadAnotherMap = false;
         this.fps = 0;
+        this.characterService.gameMap = this;
         this.mapCreator.mapLoaded.subscribe(function (value) {
             if (value) {
+                _this.reinitializeGame();
                 _this.setBackground();
+                _this.zoom = 1 / (924 / document.documentElement.clientHeight);
             }
         });
-        this.mapRepresentationService.gameMap = this;
         this.mapCreator.mapLoaded.subscribe(function (value) {
             if (value) {
                 _this.gameLoop();
@@ -75,7 +81,7 @@ var GameMapComponent = (function () {
                 break;
             }
         }
-        if (this.pause == false) {
+        if (this.pause == false && this.gameOver == false) {
             switch (event.keyCode) {
                 case 39: {
                     this.characterService.startMovingRight();
@@ -104,6 +110,16 @@ var GameMapComponent = (function () {
             }
         }
     };
+    GameMapComponent.prototype.calculateZoom = function () {
+        this.zoom = 1 / (924 / document.documentElement.clientHeight);
+    };
+    GameMapComponent.prototype.reinitializeGame = function () {
+        this.characterService.live = 2;
+        document.body.scrollLeft = 0;
+        this.gameOver = false;
+        this.pause = false;
+        this.hasWon = false;
+    };
     GameMapComponent.prototype.calculateFPS = function () {
         if (this.lastFPSCheckDate === undefined) {
             this.lastFPSCheckDate = new Date();
@@ -113,11 +129,13 @@ var GameMapComponent = (function () {
     };
     GameMapComponent.prototype.stopGame = function () {
         clearInterval(this.gameLoopInterval);
+        this.zoom = 1;
         this.isRunning = false;
     };
     GameMapComponent.prototype.gameLoop = function () {
         var _this = this;
         if (this.isRunning == false) {
+            this.calculateZoom();
             this.isRunning = true;
             this.gameLoopInterval = setInterval(function () {
                 _this.gameLoop();
@@ -129,7 +147,14 @@ var GameMapComponent = (function () {
             this.processCharacter();
             this.characterService.checkIfMoved();
             this.processGravity();
+            this.processMap();
         }
+    };
+    GameMapComponent.prototype.reverseZoom = function () {
+        return 1 / this.zoom;
+    };
+    GameMapComponent.prototype.processMap = function () {
+        this.mapRepresentationService.scrollBody();
     };
     GameMapComponent.prototype.processGravity = function () {
         this.characterService.processGravity();
@@ -137,16 +162,106 @@ var GameMapComponent = (function () {
     GameMapComponent.prototype.processCharacter = function () {
         this.characterService.accelerate();
         this.characterService.moveCharacter();
+        this.characterService.checkPosition();
+        this.characterService.checkLive();
+    };
+    GameMapComponent.prototype.playerHasWon = function () {
+        var _this = this;
+        this.hasWon = true;
+        this.stopGame();
+        setTimeout(function () {
+            _this.mapLoadModal.show();
+        }, 3000);
     };
     GameMapComponent.prototype.ngAfterViewInit = function () {
+        this.mapRepresentationService.gameMap = this;
         this.mapLoadModal.show();
     };
     GameMapComponent.prototype.ngOnInit = function () {
     };
     GameMapComponent.prototype.setBackground = function () {
         this.backgroundImage = 'url(http://localhost:55/' + this.mapCreator.background.source + ')';
-        console.log('url(http://localhost:55/' + this.mapCreator.background.source + ')');
     };
+    Object.defineProperty(GameMapComponent.prototype, "hasWon", {
+        get: function () {
+            return this._hasWon;
+        },
+        set: function (value) {
+            this._hasWon = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameMapComponent.prototype, "gameOver", {
+        get: function () {
+            return this._gameOver;
+        },
+        set: function (value) {
+            this._gameOver = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameMapComponent.prototype, "playgroundWidth", {
+        get: function () {
+            return this._playgroundWidth;
+        },
+        set: function (value) {
+            this._playgroundWidth = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameMapComponent.prototype, "playgroundHeight", {
+        get: function () {
+            return this._playgroundHeight;
+        },
+        set: function (value) {
+            this._playgroundHeight = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameMapComponent.prototype, "playgroundRation", {
+        get: function () {
+            return this._playgroundRation;
+        },
+        set: function (value) {
+            this._playgroundRation = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameMapComponent.prototype, "defaultWidth", {
+        get: function () {
+            return this._defaultWidth;
+        },
+        set: function (value) {
+            this._defaultWidth = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameMapComponent.prototype, "defaultHeight", {
+        get: function () {
+            return this._defaultHeight;
+        },
+        set: function (value) {
+            this._defaultHeight = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameMapComponent.prototype, "defaultRatio", {
+        get: function () {
+            return this._defaultRatio;
+        },
+        set: function (value) {
+            this._defaultRatio = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return GameMapComponent;
 }());
 __decorate([
@@ -174,6 +289,10 @@ __decorate([
     __metadata("design:type", String)
 ], GameMapComponent.prototype, "backgroundImage", void 0);
 __decorate([
+    core_1.HostBinding('style.zoom'),
+    __metadata("design:type", Number)
+], GameMapComponent.prototype, "zoom", void 0);
+__decorate([
     core_1.HostListener('window:keydown', ['$event']),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [KeyboardEvent]),
@@ -192,7 +311,7 @@ GameMapComponent = __decorate([
         templateUrl: '../templates/game-map.component.html',
         styleUrls: ['../css/game-map.component.min.css'],
     }),
-    __metadata("design:paramtypes", [map_service_1.MapService, map_creator_service_1.MapCreator, character_service_1.CharacterService, map_representation_service_1.MapRepresentationService])
+    __metadata("design:paramtypes", [map_service_1.MapService, map_creator_service_1.MapCreator, character_service_1.CharacterService, map_representation_service_1.MapRepresentationService, core_1.ElementRef])
 ], GameMapComponent);
 exports.GameMapComponent = GameMapComponent;
 //# sourceMappingURL=game-map.component.js.map

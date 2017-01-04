@@ -22,10 +22,11 @@ var game_map_component_1 = require("./game-map.component");
 var map_service_1 = require("../../shared/services/map.service");
 var CollectibleComponent = (function (_super) {
     __extends(CollectibleComponent, _super);
-    function CollectibleComponent(mapService, gameMap) {
+    function CollectibleComponent(mapService, gameMap, ref) {
         var _this = _super.call(this) || this;
         _this.mapService = mapService;
         _this.gameMap = gameMap;
+        _this.ref = ref;
         return _this;
     }
     CollectibleComponent.prototype.setSelectedType = function () {
@@ -43,7 +44,7 @@ CollectibleComponent = __decorate([
         styleUrls: ['../css/collectible.component.min.css'],
     }),
     __param(1, core_1.Inject(core_1.forwardRef(function () { return game_map_component_1.GameMapComponent; }))),
-    __metadata("design:paramtypes", [map_service_1.MapService, game_map_component_1.GameMapComponent])
+    __metadata("design:paramtypes", [map_service_1.MapService, game_map_component_1.GameMapComponent, core_1.ElementRef])
 ], CollectibleComponent);
 exports.CollectibleComponent = CollectibleComponent;
 //# sourceMappingURL=collectible.component.js.map

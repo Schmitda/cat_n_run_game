@@ -20,14 +20,26 @@ var core_1 = require("@angular/core");
 var element_1 = require("./element");
 var game_map_component_1 = require("./game-map.component");
 var map_service_1 = require("../../shared/services/map.service");
+var map_representation_service_1 = require("../../shared/services/map-representation.service");
 var MapElementComponent = (function (_super) {
     __extends(MapElementComponent, _super);
-    function MapElementComponent(mapService, gameMap) {
+    function MapElementComponent(mapService, gameMap, mapRepresentationService) {
         var _this = _super.call(this) || this;
         _this.mapService = mapService;
         _this.gameMap = gameMap;
+        _this.mapRepresentationService = mapRepresentationService;
+        mapRepresentationService.tookMeasure.subscribe(function (ratio) {
+            /*this.shrinkFactor = 1.5;
+            this.xCoord = ratio.playgroundWidth / 100 * this.element.xRatio;
+            this.yCoord = ratio.playgroundHeight / 100 * this.element.yRatio;*/
+            _this.ratio = ratio;
+        });
         return _this;
     }
+    MapElementComponent.prototype.ngOnChanges = function (change) {
+        if (change.element && change.element.currentValue) {
+        }
+    };
     MapElementComponent.prototype.setSelectedType = function () {
         this.mapService.selectedType = "mapElement";
     };
@@ -43,7 +55,7 @@ MapElementComponent = __decorate([
         styleUrls: ['../css/map-element.component.min.css'],
     }),
     __param(1, core_1.Inject(core_1.forwardRef(function () { return game_map_component_1.GameMapComponent; }))),
-    __metadata("design:paramtypes", [map_service_1.MapService, game_map_component_1.GameMapComponent])
+    __metadata("design:paramtypes", [map_service_1.MapService, game_map_component_1.GameMapComponent, map_representation_service_1.MapRepresentationService])
 ], MapElementComponent);
 exports.MapElementComponent = MapElementComponent;
 //# sourceMappingURL=map-element.component.js.map

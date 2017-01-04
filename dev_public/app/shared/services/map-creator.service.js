@@ -99,6 +99,26 @@ var MapCreator = (function () {
         this._mapElements = map.map.mapElements;
         this._background = map.map.background;
         this._collectibles = map.map.collectibles;
+        this.winningPoints = map.map.collectibles.map(function (collectible) {
+            if (collectible.collectible.reward == 'winningPoint') {
+                return collectible;
+            }
+        });
+        this.lifePoints = map.map.collectibles.map(function (collectible) {
+            if (collectible.collectible.reward == 'life') {
+                return collectible;
+            }
+        });
+        this.invulnerablePoints = map.map.collectibles.map(function (collectible) {
+            if (collectible.collectible.reward == 'invulnerable') {
+                return collectible;
+            }
+        });
+        this.speedPoints = map.map.collectibles.map(function (collectible) {
+            if (collectible.collectible.reward == 'speed') {
+                return collectible;
+            }
+        });
         this.setName(map.map.name);
         this.setId(map._id);
         this._mapLoaded.next(true);
@@ -220,6 +240,12 @@ var MapCreator = (function () {
         enumerable: true,
         configurable: true
     });
+    MapCreator.prototype.clearMap = function () {
+        this._decorations = [];
+        this._characters = [];
+        this._mapElements = [];
+        this._collectibles = [];
+    };
     return MapCreator;
 }());
 MapCreator = __decorate([

@@ -1,8 +1,8 @@
 <div class="elements">
-    <map-element [style.z-index]="item.mapElement.zCoord" *ngFor="let item of mapCreator.mapElements" [element]="item.mapElement" [xCoord]="item.xCoord" [yCoord]="item.yCoord"></map-element>
-    <decoration *ngFor="let decoration of mapCreator.decorations" [element]="decoration.decoration" [xCoord]="decoration.xCoord" [yCoord]="decoration.yCoord"></decoration>
-    <character *ngFor="let item of mapCreator.characters" [element]="item.character" [xCoord]="item.xCoord" [yCoord]="item.yCoord"></character>
-    <collectible *ngFor="let item of mapCreator.collectibles" [element]="item.collectible" [xCoord]="item.xCoord" [yCoord]="item.yCoord"></collectible>
+    <map-element [style.z-index]="item.mapElement.zCoord" *ngFor="let item of mapCreator.mapElements" [xRatio]="item.xRatio" [yRatio]="item.yRatio" [element]="item.mapElement" [xCoord]="item.xCoord" [yCoord]="item.yCoord"></map-element>
+    <decoration *ngFor="let decoration of mapCreator.decorations" [xRatio]="decoration.xRatio" [element]="decoration.decoration" [yRatio]="decoration.yRatio" [xCoord]="decoration.xCoord" [yCoord]="decoration.yCoord"></decoration>
+    <character *ngFor="let item of mapCreator.characters" [xRatio]="item.xRatio" [element]="item.character" [xCoord]="item.xCoord" [yRatio]="item.yRatio" [yCoord]="item.yCoord"></character>
+    <collectible *ngFor="let item of mapCreator.collectibles" [xRatio]="item.xRatio" [element]="item.collectible" [xCoord]="item.xCoord" [yRatio]="item.yRatio" [yCoord]="item.yCoord"></collectible>
 </div>
 
 <div class="lives">
@@ -10,5 +10,7 @@
     <svg *ngIf="characterService.live >= 2" enable-background="new 0 0 128 128" height="128px" id="Layer_1" version="1.1" viewBox="0 0 128 128" width="128px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M92.766,7.158c-11.879,0-22.379,7.886-28.763,16.894C57.619,15.044,47.12,7.158,35.238,7.158   C15.78,7.158,0,22.934,0,42.392C0,64,16.502,90.594,64,120.842c47.5-30.248,64-56.842,64-78.45   C128,22.934,112.225,7.158,92.766,7.158z" fill="#CC191E"/></g></svg>
 </div>
 <div class="fps">{{fps}} FPS</div>
-<div *ngIf="pause" class="pause">Game paused!<br> Miew!</div>
+<div *ngIf="pause && hasWon == false" class="pause">Game paused!<br> Miew!</div>
+<div *ngIf="gameOver && !hasWon" class="pause">Game over!<br></div>
+<div *ngIf="hasWon" class="pause">You have won!<br>Yayyy!</div>
 <map-load-modal></map-load-modal>

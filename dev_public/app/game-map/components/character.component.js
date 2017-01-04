@@ -23,10 +23,10 @@ var map_service_1 = require("../../shared/services/map.service");
 var character_service_1 = require("../services/character.service");
 var CharacterComponent = (function (_super) {
     __extends(CharacterComponent, _super);
-    function CharacterComponent(mapService, gameMap, characterService, _ref) {
+    function CharacterComponent(mapService, _gameMap, characterService, _ref) {
         var _this = _super.call(this) || this;
         _this.mapService = mapService;
-        _this.gameMap = gameMap;
+        _this._gameMap = _gameMap;
         _this.characterService = characterService;
         _this._ref = _ref;
         _this._rotate = false;
@@ -83,6 +83,13 @@ var CharacterComponent = (function (_super) {
         },
         set: function (value) {
             this._image = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CharacterComponent.prototype, "gameMap", {
+        get: function () {
+            return this._gameMap;
         },
         enumerable: true,
         configurable: true

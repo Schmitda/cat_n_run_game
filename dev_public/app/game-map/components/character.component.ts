@@ -17,7 +17,7 @@ export class CharacterComponent extends BaseElement implements OnInit, OnChanges
     private _imageNumber: number;
     @ViewChild('imgElement') imgElement: ElementRef;
 
-    constructor(protected mapService: MapService, @Inject(forwardRef(() =>  GameMapComponent)) protected gameMap: GameMapComponent, private characterService: CharacterService, private _ref: ElementRef) {
+    constructor(protected mapService: MapService, @Inject(forwardRef(() =>  GameMapComponent)) protected _gameMap: GameMapComponent, private characterService: CharacterService, private _ref: ElementRef) {
         super();
         this.characterService.setCharacterComponent(this);
     }
@@ -72,6 +72,10 @@ export class CharacterComponent extends BaseElement implements OnInit, OnChanges
 
     set image(value: string) {
         this._image = value;
+    }
+
+    get gameMap(): GameMapComponent {
+        return this._gameMap;
     }
 }
 

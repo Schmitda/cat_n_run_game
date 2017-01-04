@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var core_2 = require("@angular/core");
+var Element_1 = require("../../models/Element");
 var BaseElement = (function () {
     function BaseElement() {
         this._hidden = false;
@@ -32,7 +33,7 @@ var BaseElement = (function () {
 }());
 __decorate([
     core_2.Input(),
-    __metadata("design:type", Element)
+    __metadata("design:type", Element_1.Element)
 ], BaseElement.prototype, "element", void 0);
 __decorate([
     core_2.Input(),
@@ -42,6 +43,14 @@ __decorate([
     core_2.Input(),
     __metadata("design:type", Number)
 ], BaseElement.prototype, "yCoord", void 0);
+__decorate([
+    core_2.Input(),
+    __metadata("design:type", Number)
+], BaseElement.prototype, "xRatio", void 0);
+__decorate([
+    core_2.Input(),
+    __metadata("design:type", Number)
+], BaseElement.prototype, "yRatio", void 0);
 BaseElement = __decorate([
     core_1.Component({
         moduleId: module.id,
