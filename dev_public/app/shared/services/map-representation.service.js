@@ -23,12 +23,15 @@ var MapRepresentationService = (function () {
             var screenWidth = document.documentElement.clientWidth * this.gameMap.reverseZoom();
             var screenHeight = document.documentElement.clientHeight * this.gameMap.reverseZoom();
             if (xYPosition.x > screenWidth / 2) {
-                var middlePoint = Math.abs((document.body.getBoundingClientRect()['left'] || 0)) + document.body.getBoundingClientRect()['width'] / 2;
-                document.body.scrollLeft += xYPosition.x / this.gameMap.reverseZoom() - middlePoint;
+                var middlePoint = (Math.abs(document.body.getBoundingClientRect()['width'] / 2 + document.body.scrollLeft)) /** this.gameMap.zoom*/;
+                var x = xYPosition.x * this.gameMap.zoom;
+                var difference = x - middlePoint;
+                if (difference > 1 || difference < -1) {
+                    document.body.scrollLeft += difference;
+                }
             }
-            if (xYPosition.y > screenHeight / 2) {
-                var middlePoint = Math.abs((document.body.getBoundingClientRect()['top'] || 0)) + document.body.getBoundingClientRect()['height'] / 2;
-                document.body.scrollTop -= xYPosition.y - middlePoint;
+            else {
+                document.body.scrollLeft = 0;
             }
         }
     };

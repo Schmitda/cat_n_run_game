@@ -9,18 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Minimal NgModule Test';
+var MapLoadService = (function () {
+    function MapLoadService() {
     }
-    return AppComponent;
+    Object.defineProperty(MapLoadService.prototype, "mapLoadComponent", {
+        get: function () {
+            return this._mapLoadComponent;
+        },
+        set: function (value) {
+            this._mapLoadComponent = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return MapLoadService;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "<router-outlet></router-outlet>\n                <map-load-modal></map-load-modal>\n",
-    }),
+MapLoadService = __decorate([
+    core_1.Injectable(),
     __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], MapLoadService);
+exports.MapLoadService = MapLoadService;
+//# sourceMappingURL=map-load.service.js.map

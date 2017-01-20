@@ -141,14 +141,12 @@ var MapCreator = (function () {
                 xCoord: xCoord
             });
         }
-        console.log(this._mapElements);
     };
     MapCreator.prototype.deleteComponent = function (componentToDelete) {
         var _this = this;
         this._decorations.forEach(function (decoration, index) {
             if (decoration.decoration == componentToDelete) {
                 _this._decorations.splice(index, 1);
-                console.log("here");
             }
         });
         this._collectibles.forEach(function (collectible, index) {

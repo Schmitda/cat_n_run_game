@@ -111,7 +111,6 @@ var CharacterService = (function () {
             this.live = 0;
         }
         var collectible = this.mapRepresentationService.getCollectibleCatTouches();
-        console.log(collectible);
         if (collectible) {
             if (collectible.element.reward == 'winningPoint') {
                 this.gameMap.playerHasWon();
@@ -131,7 +130,7 @@ var CharacterService = (function () {
     };
     CharacterService.prototype.getXYPosition = function () {
         var rectangle = this._characterComponent.imgElement.nativeElement.getBoundingClientRect();
-        var x = Math.abs(document.body.getClientRects()[0].left * this.gameMap.reverseZoom()) + rectangle.left + rectangle.width / 2;
+        var x = this._characterComponent.xCoord + this.characterComponent.element.width / 2;
         var y = rectangle.bottom;
         return { x: x, y: y };
     };

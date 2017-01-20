@@ -173,14 +173,12 @@ export class MapCreator{
                 xCoord: xCoord
             });
         }
-        console.log(this._mapElements);
     }
 
     public deleteComponent(componentToDelete: any) {
         this._decorations.forEach((decoration, index)=> {
             if(decoration.decoration == componentToDelete){
                 this._decorations.splice(index,1);
-                console.log("here");
             }
         });
 

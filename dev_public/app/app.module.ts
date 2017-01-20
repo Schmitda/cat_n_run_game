@@ -4,12 +4,13 @@ import {AppComponent} from "./app.component";
 import {CoreModule} from "./core/core.modules";
 import {routing} from "./app.routing";
 import {HttpModule} from "@angular/http";
+import {MapLoadModalComponent} from "./game-map/components/map-load-modal.component";
 
 
 
 @NgModule({
     imports: [ CoreModule, routing, HttpModule, BrowserModule ],
-    declarations: [ AppComponent ],
+    declarations: [ AppComponent, MapLoadModalComponent ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

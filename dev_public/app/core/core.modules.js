@@ -13,6 +13,7 @@ var common_1 = require("@angular/common");
 var map_service_1 = require("../shared/services/map.service");
 var map_creator_service_1 = require("../shared/services/map-creator.service");
 var map_representation_service_1 = require("../shared/services/map-representation.service");
+var map_load_service_1 = require("../game-map/services/map-load.service");
 var CoreModule = (function () {
     function CoreModule() {
     }
@@ -23,7 +24,7 @@ CoreModule = __decorate([
         imports: [common_1.CommonModule],
         /*  declarations: [ TitleComponent ],
           exports:      [ TitleComponent ],*/
-        providers: [map_service_1.MapService, map_creator_service_1.MapCreator, map_representation_service_1.MapRepresentationService]
+        providers: [map_service_1.MapService, map_creator_service_1.MapCreator, map_representation_service_1.MapRepresentationService, map_load_service_1.MapLoadService]
     }),
     __metadata("design:paramtypes", [])
 ], CoreModule);

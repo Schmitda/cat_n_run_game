@@ -119,7 +119,6 @@ export class CharacterService {
             this.live = 0;
         }
         let collectible: CollectibleComponent|boolean = this.mapRepresentationService.getCollectibleCatTouches();
-        console.log(collectible);
         if (collectible) {
             if (collectible.element.reward == 'winningPoint') {
                 this.gameMap.playerHasWon();
@@ -141,7 +140,7 @@ export class CharacterService {
 
     public getXYPosition() {
         let rectangle = this._characterComponent.imgElement.nativeElement.getBoundingClientRect();
-        let x = Math.abs(document.body.getClientRects()[0].left * this.gameMap.reverseZoom()) + rectangle.left + rectangle.width / 2;
+        let x = this._characterComponent.xCoord + this.characterComponent.element.width / 2 ;
         let y = rectangle.bottom;
         return {x: x, y: y}
     }
@@ -211,4 +210,5 @@ export class CharacterService {
     set characterComponent(value: CharacterComponent) {
         this._characterComponent = value;
     }
+
 }

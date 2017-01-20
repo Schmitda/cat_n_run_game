@@ -14,6 +14,7 @@ var app_component_1 = require("./app.component");
 var core_modules_1 = require("./core/core.modules");
 var app_routing_1 = require("./app.routing");
 var http_1 = require("@angular/http");
+var map_load_modal_component_1 = require("./game-map/components/map-load-modal.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,7 +23,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [core_modules_1.CoreModule, app_routing_1.routing, http_1.HttpModule, platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent],
+        declarations: [app_component_1.AppComponent, map_load_modal_component_1.MapLoadModalComponent],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])

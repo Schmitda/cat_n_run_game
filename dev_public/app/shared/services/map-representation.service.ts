@@ -28,12 +28,14 @@ export class MapRepresentationService {
             let screenWidth = document.documentElement.clientWidth * this.gameMap.reverseZoom();
             let screenHeight = document.documentElement.clientHeight * this.gameMap.reverseZoom();
             if (xYPosition.x > screenWidth / 2) {
-                let middlePoint = Math.abs((document.body.getBoundingClientRect()['left']|| 0)) + document.body.getBoundingClientRect()['width'] / 2;
-                document.body.scrollLeft += xYPosition.x / this.gameMap.reverseZoom() - middlePoint;
-            }
-            if (xYPosition.y > screenHeight / 2) {
-                let middlePoint = Math.abs((document.body.getBoundingClientRect()['top'] || 0)) + document.body.getBoundingClientRect()['height'] / 2;
-                document.body.scrollTop -= xYPosition.y - middlePoint;
+                let middlePoint = (Math.abs(document.body.getBoundingClientRect()['width'] / 2  + document.body.scrollLeft)  /** this.gameMap.zoom*/;
+                let x = xYPosition.x * this.gameMap.zoom;
+                let difference = x - middlePoint;
+                if(difference > 1 ||  difference < -1) {
+                    document.body.scrollLeft += difference;
+                }
+            }else{
+                document.body.scrollLeft = 0;
             }
         }
     }
@@ -82,6 +84,8 @@ export class MapRepresentationService {
             }
         });
         return foundElementCatIsOn;
+
+
     }
 
     public getCollectibleCatTouches(): CollectibleComponent|boolean {

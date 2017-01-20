@@ -17,23 +17,23 @@ var MapService = (function () {
     }
     MapService.prototype.save = function (map) {
         delete map._id;
-        return this.http.post('http://localhost:55/api/map', map)
+        return this.http.post('http://schmitz-dynamics.ch:55/api/map', map)
             .map(this.extractData);
     };
     MapService.prototype.getAll = function () {
-        return this.http.get('http://localhost:55/api/map')
+        return this.http.get('http://schmitz-dynamics.ch:55/api/map')
             .map(this.extractData);
     };
     MapService.prototype.getById = function (id) {
-        return this.http.get('http://localhost:55/api/map/' + id)
+        return this.http.get('http://schmitz-dynamics.ch:55/api/map/' + id)
             .map(this.extractData);
     };
     MapService.prototype.update = function (map) {
-        return this.http.put('http://localhost:55/api/map/' + map._id, map)
+        return this.http.put('http://schmitz-dynamics.ch:55/api/map/' + map._id, map)
             .map(this.extractData);
     };
     MapService.prototype.delete = function (id) {
-        return this.http.delete('http://localhost:55/api/map/' + id)
+        return this.http.delete('http://schmitz-dynamics.ch:55/api/map/' + id)
             .map(this.extractData);
     };
     MapService.prototype.extractData = function (res) {

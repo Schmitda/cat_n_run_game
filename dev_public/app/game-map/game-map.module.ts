@@ -17,7 +17,7 @@ import {CharacterService} from "./services/character.service";
 @NgModule({
     imports: [ gameMapRouting, SharedModule ],
     providers: [CharacterService],
-    declarations: [  GameMapComponent, DecorationComponent, MapLoadModalComponent, CharacterComponent, MapElementComponent, CollectibleComponent ],
+    declarations: [  GameMapComponent, DecorationComponent, CharacterComponent, MapElementComponent, CollectibleComponent ],
     exports: []
 })
 export class GameMapModule { }
