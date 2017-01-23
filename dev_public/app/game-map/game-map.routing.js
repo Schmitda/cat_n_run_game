@@ -1,5 +1,5 @@
 "use strict";
-var router_1 = require("@angular/router");
+var router_1 = require('@angular/router');
 var game_map_component_1 = require("./components/game-map.component");
 exports.routes = [
     { path: '', pathMatch: 'full', component: game_map_component_1.GameMapComponent },

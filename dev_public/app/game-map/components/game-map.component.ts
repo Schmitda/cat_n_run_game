@@ -276,7 +276,7 @@ export class GameMapComponent implements OnInit, AfterViewInit {
     }
 
     public setBackground() {
-        this.backgroundImage = 'url(http://schmitz-dynamics.ch:55/' + this.mapCreator.background.source + ')';
+        this.backgroundImage = 'url(http://schmitz-dynamics.ch:60/' + this.mapCreator.background.source + ')';
     }
 
     get hasWon(): boolean {

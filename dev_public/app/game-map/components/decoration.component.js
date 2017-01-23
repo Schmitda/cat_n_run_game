@@ -16,32 +16,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var element_1 = require("./element");
 var map_service_1 = require("../../shared/services/map.service");
 var game_map_component_1 = require("./game-map.component");
 var DecorationComponent = (function (_super) {
     __extends(DecorationComponent, _super);
     function DecorationComponent(mapService, gameMap) {
-        var _this = _super.call(this) || this;
-        _this.mapService = mapService;
-        _this.gameMap = gameMap;
-        return _this;
+        _super.call(this);
+        this.mapService = mapService;
+        this.gameMap = gameMap;
     }
     DecorationComponent.prototype.setSelectedType = function () {
         this.mapService.selectedType = "decoration";
     };
     DecorationComponent.prototype.ngOnInit = function () { };
+    DecorationComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'decoration',
+            templateUrl: '../templates/decoration.component.html',
+        }),
+        __param(1, core_1.Optional()),
+        __param(1, core_1.Inject(core_1.forwardRef(function () { return game_map_component_1.GameMapComponent; }))), 
+        __metadata('design:paramtypes', [map_service_1.MapService, game_map_component_1.GameMapComponent])
+    ], DecorationComponent);
     return DecorationComponent;
 }(element_1.BaseElement));
-DecorationComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'decoration',
-        templateUrl: '../templates/decoration.component.html',
-    }),
-    __param(1, core_1.Optional()), __param(1, core_1.Inject(core_1.forwardRef(function () { return game_map_component_1.GameMapComponent; }))),
-    __metadata("design:paramtypes", [map_service_1.MapService, game_map_component_1.GameMapComponent])
-], DecorationComponent);
 exports.DecorationComponent = DecorationComponent;
 //# sourceMappingURL=decoration.component.js.map

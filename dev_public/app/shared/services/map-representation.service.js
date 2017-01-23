@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var Rx_1 = require("rxjs/Rx");
 var MapRepresentationService = (function () {
     function MapRepresentationService() {
@@ -23,7 +23,7 @@ var MapRepresentationService = (function () {
             var screenWidth = document.documentElement.clientWidth * this.gameMap.reverseZoom();
             var screenHeight = document.documentElement.clientHeight * this.gameMap.reverseZoom();
             if (xYPosition.x > screenWidth / 2) {
-                var middlePoint = (Math.abs(document.body.getBoundingClientRect()['width'] / 2 + document.body.scrollLeft)) /** this.gameMap.zoom*/;
+                var middlePoint = (Math.abs(document.body.getBoundingClientRect()['width'] / 2 + document.body.scrollLeft));
                 var x = xYPosition.x * this.gameMap.zoom;
                 var difference = x - middlePoint;
                 if (difference > 1 || difference < -1) {
@@ -142,11 +142,11 @@ var MapRepresentationService = (function () {
         enumerable: true,
         configurable: true
     });
+    MapRepresentationService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], MapRepresentationService);
     return MapRepresentationService;
 }());
-MapRepresentationService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [])
-], MapRepresentationService);
 exports.MapRepresentationService = MapRepresentationService;
 //# sourceMappingURL=map-representation.service.js.map

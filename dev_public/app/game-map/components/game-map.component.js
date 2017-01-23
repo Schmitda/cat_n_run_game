@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var decoration_component_1 = require("./decoration.component");
 var map_service_1 = require("../../shared/services/map.service");
 var map_creator_service_1 = require("../../shared/services/map-creator.service");
@@ -243,7 +243,7 @@ var GameMapComponent = (function () {
     GameMapComponent.prototype.ngOnInit = function () {
     };
     GameMapComponent.prototype.setBackground = function () {
-        this.backgroundImage = 'url(http://schmitz-dynamics.ch:55/' + this.mapCreator.background.source + ')';
+        this.backgroundImage = 'url(http://schmitz-dynamics.ch:60/' + this.mapCreator.background.source + ')';
     };
     Object.defineProperty(GameMapComponent.prototype, "hasWon", {
         get: function () {
@@ -331,88 +331,88 @@ var GameMapComponent = (function () {
         enumerable: true,
         configurable: true
     });
+    __decorate([
+        core_1.ViewChildren(decoration_component_1.DecorationComponent), 
+        __metadata('design:type', core_1.QueryList)
+    ], GameMapComponent.prototype, "decorationComponents", void 0);
+    __decorate([
+        core_1.ViewChildren(collectible_component_1.CollectibleComponent), 
+        __metadata('design:type', core_1.QueryList)
+    ], GameMapComponent.prototype, "collectibleComponents", void 0);
+    __decorate([
+        core_1.ViewChildren(map_element_component_1.MapElementComponent), 
+        __metadata('design:type', core_1.QueryList)
+    ], GameMapComponent.prototype, "mapElementComponents", void 0);
+    __decorate([
+        core_1.ViewChildren(character_component_1.CharacterComponent), 
+        __metadata('design:type', core_1.QueryList)
+    ], GameMapComponent.prototype, "characterComponents", void 0);
+    __decorate([
+        core_1.HostBinding('style.background-image'), 
+        __metadata('design:type', String)
+    ], GameMapComponent.prototype, "backgroundImage", void 0);
+    __decorate([
+        core_1.HostBinding('style.zoom'), 
+        __metadata('design:type', Number)
+    ], GameMapComponent.prototype, "zoom", void 0);
+    __decorate([
+        core_1.HostListener('window:keydown', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [KeyboardEvent]), 
+        __metadata('design:returntype', void 0)
+    ], GameMapComponent.prototype, "onKeyDown", null);
+    __decorate([
+        core_1.HostListener('window:resize', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], GameMapComponent.prototype, "onResize", null);
+    __decorate([
+        core_1.HostListener('window:orientationchange', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], GameMapComponent.prototype, "onOrientationChange", null);
+    __decorate([
+        core_1.HostListener('window:keyup', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [KeyboardEvent]), 
+        __metadata('design:returntype', void 0)
+    ], GameMapComponent.prototype, "onKeyUp", null);
+    __decorate([
+        core_1.HostListener('touchstart', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [TouchEvent]), 
+        __metadata('design:returntype', void 0)
+    ], GameMapComponent.prototype, "onTouchStart", null);
+    __decorate([
+        core_1.HostListener('touchmove', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [TouchEvent]), 
+        __metadata('design:returntype', void 0)
+    ], GameMapComponent.prototype, "onTouchMove", null);
+    __decorate([
+        core_1.HostListener('window:scroll', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], GameMapComponent.prototype, "onWindowScroll", null);
+    __decorate([
+        core_1.HostListener('touchend', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [TouchEvent]), 
+        __metadata('design:returntype', void 0)
+    ], GameMapComponent.prototype, "onTouchEnd", null);
+    GameMapComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: '',
+            templateUrl: '../templates/game-map.component.html',
+            styleUrls: ['../css/game-map.component.min.css'],
+        }), 
+        __metadata('design:paramtypes', [map_service_1.MapService, map_creator_service_1.MapCreator, character_service_1.CharacterService, map_representation_service_1.MapRepresentationService, core_1.ElementRef, map_load_service_1.MapLoadService])
+    ], GameMapComponent);
     return GameMapComponent;
 }());
-__decorate([
-    core_1.ViewChildren(decoration_component_1.DecorationComponent),
-    __metadata("design:type", core_1.QueryList)
-], GameMapComponent.prototype, "decorationComponents", void 0);
-__decorate([
-    core_1.ViewChildren(collectible_component_1.CollectibleComponent),
-    __metadata("design:type", core_1.QueryList)
-], GameMapComponent.prototype, "collectibleComponents", void 0);
-__decorate([
-    core_1.ViewChildren(map_element_component_1.MapElementComponent),
-    __metadata("design:type", core_1.QueryList)
-], GameMapComponent.prototype, "mapElementComponents", void 0);
-__decorate([
-    core_1.ViewChildren(character_component_1.CharacterComponent),
-    __metadata("design:type", core_1.QueryList)
-], GameMapComponent.prototype, "characterComponents", void 0);
-__decorate([
-    core_1.HostBinding('style.background-image'),
-    __metadata("design:type", String)
-], GameMapComponent.prototype, "backgroundImage", void 0);
-__decorate([
-    core_1.HostBinding('style.zoom'),
-    __metadata("design:type", Number)
-], GameMapComponent.prototype, "zoom", void 0);
-__decorate([
-    core_1.HostListener('window:keydown', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [KeyboardEvent]),
-    __metadata("design:returntype", void 0)
-], GameMapComponent.prototype, "onKeyDown", null);
-__decorate([
-    core_1.HostListener('window:resize', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], GameMapComponent.prototype, "onResize", null);
-__decorate([
-    core_1.HostListener('window:orientationchange', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], GameMapComponent.prototype, "onOrientationChange", null);
-__decorate([
-    core_1.HostListener('window:keyup', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [KeyboardEvent]),
-    __metadata("design:returntype", void 0)
-], GameMapComponent.prototype, "onKeyUp", null);
-__decorate([
-    core_1.HostListener('touchstart', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [TouchEvent]),
-    __metadata("design:returntype", void 0)
-], GameMapComponent.prototype, "onTouchStart", null);
-__decorate([
-    core_1.HostListener('touchmove', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [TouchEvent]),
-    __metadata("design:returntype", void 0)
-], GameMapComponent.prototype, "onTouchMove", null);
-__decorate([
-    core_1.HostListener('window:scroll', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], GameMapComponent.prototype, "onWindowScroll", null);
-__decorate([
-    core_1.HostListener('touchend', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [TouchEvent]),
-    __metadata("design:returntype", void 0)
-], GameMapComponent.prototype, "onTouchEnd", null);
-GameMapComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: '',
-        templateUrl: '../templates/game-map.component.html',
-        styleUrls: ['../css/game-map.component.min.css'],
-    }),
-    __metadata("design:paramtypes", [map_service_1.MapService, map_creator_service_1.MapCreator, character_service_1.CharacterService, map_representation_service_1.MapRepresentationService, core_1.ElementRef, map_load_service_1.MapLoadService])
-], GameMapComponent);
 exports.GameMapComponent = GameMapComponent;
 //# sourceMappingURL=game-map.component.js.map

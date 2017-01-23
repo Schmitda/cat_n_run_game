@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var core_2 = require("@angular/core");
 var Element_1 = require("../../models/Element");
 var BaseElement = (function () {
@@ -29,35 +29,35 @@ var BaseElement = (function () {
         enumerable: true,
         configurable: true
     });
+    __decorate([
+        core_2.Input(), 
+        __metadata('design:type', Element_1.Element)
+    ], BaseElement.prototype, "element", void 0);
+    __decorate([
+        core_2.Input(), 
+        __metadata('design:type', Number)
+    ], BaseElement.prototype, "xCoord", void 0);
+    __decorate([
+        core_2.Input(), 
+        __metadata('design:type', Number)
+    ], BaseElement.prototype, "yCoord", void 0);
+    __decorate([
+        core_2.Input(), 
+        __metadata('design:type', Number)
+    ], BaseElement.prototype, "xRatio", void 0);
+    __decorate([
+        core_2.Input(), 
+        __metadata('design:type', Number)
+    ], BaseElement.prototype, "yRatio", void 0);
+    BaseElement = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'decoration',
+            templateUrl: '../templates/decoration.component.html',
+        }), 
+        __metadata('design:paramtypes', [])
+    ], BaseElement);
     return BaseElement;
 }());
-__decorate([
-    core_2.Input(),
-    __metadata("design:type", Element_1.Element)
-], BaseElement.prototype, "element", void 0);
-__decorate([
-    core_2.Input(),
-    __metadata("design:type", Number)
-], BaseElement.prototype, "xCoord", void 0);
-__decorate([
-    core_2.Input(),
-    __metadata("design:type", Number)
-], BaseElement.prototype, "yCoord", void 0);
-__decorate([
-    core_2.Input(),
-    __metadata("design:type", Number)
-], BaseElement.prototype, "xRatio", void 0);
-__decorate([
-    core_2.Input(),
-    __metadata("design:type", Number)
-], BaseElement.prototype, "yRatio", void 0);
-BaseElement = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'decoration',
-        templateUrl: '../templates/decoration.component.html',
-    }),
-    __metadata("design:paramtypes", [])
-], BaseElement);
 exports.BaseElement = BaseElement;
 //# sourceMappingURL=element.js.map

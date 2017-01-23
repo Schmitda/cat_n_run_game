@@ -244,11 +244,11 @@ var MapCreator = (function () {
         this._mapElements = [];
         this._collectibles = [];
     };
+    MapCreator = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], MapCreator);
     return MapCreator;
 }());
-MapCreator = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [])
-], MapCreator);
 exports.MapCreator = MapCreator;
 //# sourceMappingURL=map-creator.service.js.map

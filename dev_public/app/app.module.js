@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
+var core_1 = require('@angular/core');
+var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require("./app.component");
 var core_modules_1 = require("./core/core.modules");
 var app_routing_1 = require("./app.routing");
@@ -18,15 +18,15 @@ var map_load_modal_component_1 = require("./game-map/components/map-load-modal.c
 var AppModule = (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [core_modules_1.CoreModule, app_routing_1.routing, http_1.HttpModule, platform_browser_1.BrowserModule],
+            declarations: [app_component_1.AppComponent, map_load_modal_component_1.MapLoadModalComponent],
+            bootstrap: [app_component_1.AppComponent]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [core_modules_1.CoreModule, app_routing_1.routing, http_1.HttpModule, platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, map_load_modal_component_1.MapLoadModalComponent],
-        bootstrap: [app_component_1.AppComponent]
-    }),
-    __metadata("design:paramtypes", [])
-], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

@@ -16,35 +16,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var element_1 = require("./element");
 var game_map_component_1 = require("./game-map.component");
 var map_service_1 = require("../../shared/services/map.service");
 var CollectibleComponent = (function (_super) {
     __extends(CollectibleComponent, _super);
     function CollectibleComponent(mapService, gameMap, ref) {
-        var _this = _super.call(this) || this;
-        _this.mapService = mapService;
-        _this.gameMap = gameMap;
-        _this.ref = ref;
-        return _this;
+        _super.call(this);
+        this.mapService = mapService;
+        this.gameMap = gameMap;
+        this.ref = ref;
     }
     CollectibleComponent.prototype.setSelectedType = function () {
         this.mapService.selectedType = "collectible";
     };
     CollectibleComponent.prototype.ngOnInit = function () {
     };
+    CollectibleComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'collectible',
+            templateUrl: '../templates/collectible.component.html',
+            styleUrls: ['../css/collectible.component.min.css'],
+        }),
+        __param(1, core_1.Inject(core_1.forwardRef(function () { return game_map_component_1.GameMapComponent; }))), 
+        __metadata('design:paramtypes', [map_service_1.MapService, game_map_component_1.GameMapComponent, core_1.ElementRef])
+    ], CollectibleComponent);
     return CollectibleComponent;
 }(element_1.BaseElement));
-CollectibleComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'collectible',
-        templateUrl: '../templates/collectible.component.html',
-        styleUrls: ['../css/collectible.component.min.css'],
-    }),
-    __param(1, core_1.Inject(core_1.forwardRef(function () { return game_map_component_1.GameMapComponent; }))),
-    __metadata("design:paramtypes", [map_service_1.MapService, game_map_component_1.GameMapComponent, core_1.ElementRef])
-], CollectibleComponent);
 exports.CollectibleComponent = CollectibleComponent;
 //# sourceMappingURL=collectible.component.js.map

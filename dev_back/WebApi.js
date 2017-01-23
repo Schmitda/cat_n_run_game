@@ -1,13 +1,13 @@
 "use strict";
-var express = require("express");
+var express = require('express');
 var requestLogger = require("./middleware/request-logger");
 var customerRouter = require("./routes/backend/custom-router");
 var frontendRouter = require("./routes/frontend/frontend");
 var bodyParser = require("body-parser");
-var methodOverride = require("method-override");
-var expressSession = require("express-session");
+var methodOverride = require('method-override');
+var expressSession = require('express-session');
 var FileStore = require('session-file-store')(expressSession);
-var cookieParser = require("cookie-parser");
+var cookieParser = require('cookie-parser');
 var Config_1 = require("../config/Config");
 var WebApi = (function () {
     function WebApi(app, port) {

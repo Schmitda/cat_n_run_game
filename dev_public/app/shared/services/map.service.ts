@@ -12,27 +12,27 @@ export class MapService{
 
     public save(map:any):Observable<any>{
         delete map._id;
-        return this.http.post('http://schmitz-dynamics.ch:55/api/map', map)
+        return this.http.post('http://schmitz-dynamics.ch:60/api/map', map)
             .map(this.extractData);
     }
 
     public getAll():Observable<any[]>{
-        return this.http.get('http://schmitz-dynamics.ch:55/api/map')
+        return this.http.get('http://schmitz-dynamics.ch:60/api/map')
             .map(this.extractData);
     }
 
     public getById(id:string):Observable<any[]>{
-        return this.http.get('http://schmitz-dynamics.ch:55/api/map/' + id)
+        return this.http.get('http://schmitz-dynamics.ch:60/api/map/' + id)
             .map(this.extractData);
     }
 
     public update(map:any):Observable<any>{
-        return this.http.put('http://schmitz-dynamics.ch:55/api/map/' + map._id, map)
+        return this.http.put('http://schmitz-dynamics.ch:60/api/map/' + map._id, map)
             .map(this.extractData);
     }
 
     public delete(id:number):Observable<any>{
-        return this.http.delete('http://schmitz-dynamics.ch:55/api/map/' + id)
+        return this.http.delete('http://schmitz-dynamics.ch:60/api/map/' + id)
             .map(this.extractData);
     }
 

@@ -10,7 +10,7 @@ import {WebApi} from "./dev_back/WebApi";
 
 let db = Config.getConfiguration();
 
-var port:number = 60;
+var port:number = 65;
 
 /****** SETUP-DEV & PRODUCTION ******/
 

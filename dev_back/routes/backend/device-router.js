@@ -1,6 +1,6 @@
 "use strict";
 var express = require("express");
-var Device = require("../../models/DeviceMongoose");
+var Device = require('../../models/DeviceMongoose');
 var deviceRouter = express.Router();
 deviceRouter.get('/', function (request, response) {
     Device.find().exec()

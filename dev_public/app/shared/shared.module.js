@@ -14,15 +14,15 @@ var forms_1 = require("@angular/forms");
 var SharedModule = (function () {
     function SharedModule() {
     }
+    SharedModule = __decorate([
+        core_1.NgModule({
+            imports: [common_1.CommonModule, forms_1.ReactiveFormsModule, forms_1.FormsModule],
+            declarations: [],
+            exports: [common_1.CommonModule, forms_1.FormsModule],
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SharedModule);
     return SharedModule;
 }());
-SharedModule = __decorate([
-    core_1.NgModule({
-        imports: [common_1.CommonModule, forms_1.ReactiveFormsModule, forms_1.FormsModule],
-        declarations: [],
-        exports: [common_1.CommonModule, forms_1.FormsModule],
-    }),
-    __metadata("design:paramtypes", [])
-], SharedModule);
 exports.SharedModule = SharedModule;
 //# sourceMappingURL=shared.module.js.map

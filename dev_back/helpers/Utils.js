@@ -1,5 +1,5 @@
 "use strict";
-var Rx = require("rx");
+var Rx = require('rx');
 var User = require("../models/UserMongoose");
 var Utils = (function () {
     function Utils() {

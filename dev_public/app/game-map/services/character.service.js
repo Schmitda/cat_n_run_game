@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var map_representation_service_1 = require("../../shared/services/map-representation.service");
 var CharacterService = (function () {
     function CharacterService(mapRepresentationService) {
@@ -205,11 +205,11 @@ var CharacterService = (function () {
         enumerable: true,
         configurable: true
     });
+    CharacterService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [map_representation_service_1.MapRepresentationService])
+    ], CharacterService);
     return CharacterService;
 }());
-CharacterService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [map_representation_service_1.MapRepresentationService])
-], CharacterService);
 exports.CharacterService = CharacterService;
 //# sourceMappingURL=character.service.js.map
